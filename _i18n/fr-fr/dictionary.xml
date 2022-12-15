@@ -693,4 +693,12 @@
   <block id="eebe944a361fcd12586147893245a793" category="paragraph">La plateforme de stockage interne, dans ce cas, votre instance Cloud Volumes ONTAP déployée, doit présenter les partages de fichiers SMB. Tout partage qui sera exposé via Global File cache doit permettre au groupe Everyone de contrôler entièrement au niveau du partage, tout en limitant les autorisations par le biais des autorisations NTFS.</block>
   <block id="ca8b4d0fc39e2135cbcdf391be62059b" category="list-text">\https://gfcproxyforcm-prod.azurewebsites.net/</block>
   <block id="e59af2ecfd4c7dd3a53e6980dc28d267" category="list-text">Ports TCP Global File cache : 443 (HTTPS), 6618-6630.</block>
+  <block id="0375f4855be072c7d856a0233cc21de9" category="section-title">Prise en charge des solutions des fournisseurs cloud</block>
+  <block id="be845c219bb74b14349ffa6e27e7aef3" category="paragraph">Pour obtenir une assistance technique sur les solutions de fournisseurs de services cloud suivantes que vous avez intégrées à BlueXP, reportez-vous à la section « obtention d'aide » de la documentation BlueXP de ce produit.</block>
+  <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">Amazon FSX pour ONTAP</block>
+  <block id="5bf5309465f91318228a7f956b826348" category="list-text"><block ref="5bf5309465f91318228a7f956b826348" category="inline-link-macro-rx"></block></block>
+  <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files</block>
+  <block id="0e2bc9c853e0af52ead12823c025e58b" category="list-text"><block ref="0e2bc9c853e0af52ead12823c025e58b" category="inline-link-macro-rx"></block></block>
+  <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">Cloud Volumes Service pour Google Cloud</block>
+  <block id="02efcbea18b9485a78a41871dce1e64d" category="list-text"><block ref="02efcbea18b9485a78a41871dce1e64d" category="inline-link-macro-rx"></block></block>
 </blocks>
