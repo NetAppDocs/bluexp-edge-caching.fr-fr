@@ -18,6 +18,17 @@ Découvrez quels problèmes ont été résolus dans Global File cache.
 
 
 
+== 27 mars 2023 (version 2.2)
+
+* Correction d'un problème de conversion du format horaire de l'exécution d'un travail de pré-remplissage pour l'option « heure de la dernière modification ».
+* Résolution d'un problème lié à l'analyse du transfert de fichiers et à sa transmission au service Cloud Insights.
+* Edge Sync des fichiers sur tous les abonnés est reconnecté automatiquement lorsqu'il y a une déconnexion avec l'éditeur.
+* Exécution de travaux de pré-remplissage fixe sur un Edge si celui-ci est connecté à plusieurs cœurs.
+* L'interface utilisateur Optimus affiche désormais la liste Connected Edge sur un éditeur qui participe à la fonctionnalité Edge Sync.
+
+
+
+
 == 24 octobre 2022 (version 2.1)
 
 * Une validation supplémentaire du numéro d'abonnement réseau GFC est effectuée lors de la configuration des licences.

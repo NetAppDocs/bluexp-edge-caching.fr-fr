@@ -32,7 +32,7 @@ Pour démarrer rapidement, suivez ces étapes ou faites défiler jusqu'aux secti
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Déployez Cloud Volumes ONTAP
 [role="quick-margin-para"]
-Déployez Cloud Volumes ONTAP dans Azure ou AWS et configurez les partages de fichiers SMB. Pour plus d'informations, voir https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^] ou https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^].
+Déployez Cloud Volumes ONTAP et configurez les partages de fichiers SMB. Pour plus d'informations, voir https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez le serveur Global File cache Management Server
 [role="quick-margin-para"]
@@ -54,7 +54,7 @@ Voir link:task-deploy-gfc-edge-instances.html["Déploiement des instances Global
 
 === Déployez Cloud Volumes ONTAP comme plateforme de stockage
 
-Dans la version actuelle, Global File cache prend en charge Cloud Volumes ONTAP déployé dans Azure ou AWS. Pour obtenir des informations détaillées sur les prérequis, les exigences et les instructions de déploiement, voir https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^] ou https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^].
+Global File cache prend en charge les déploiements Cloud Volumes ONTAP dans Azure, AWS et Google Cloud. Pour obtenir des informations détaillées sur les prérequis, les exigences et les instructions de déploiement, voir https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^]
 
 Notez la nécessité supplémentaire suivante de Global File cache :
 
@@ -91,7 +91,7 @@ image:screenshot_gfc_install3.png["Capture d'écran affichant les informations r
 image:screenshot_gfc_install4.png["Capture d'écran présentant les conditions préalables avant le déploiement du serveur de gestion du cache de fichiers global et des instances principales."]
 
 . Après avoir vérifié que les exigences ont été respectées ou que vous disposez des informations nécessaires pour répondre à ces exigences, cliquez sur *Continuer*.
-. Entrez les informations d'identification administratives que vous utiliserez pour accéder à la VM du serveur de gestion du cache de fichiers global, puis cliquez sur *Activer le service de réseau réseau sans réseau sans réseau (GFC)*. Dans Azure, vous saisissez les identifiants sous forme de nom d'utilisateur et de mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle/de l'instance si vous le souhaitez.
+. Entrez les informations d'identification administratives que vous utiliserez pour accéder à la VM du serveur de gestion du cache de fichiers global, puis cliquez sur *Activer le service de réseau réseau sans réseau sans réseau (GFC)*. Pour Azure et Google Cloud, vous entrez les identifiants en tant que nom d'utilisateur et mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle/de l'instance si vous le souhaitez.
 +
 image:screenshot_gfc_install5.png["Capture d'écran indiquant les informations de configuration nécessaires à la configuration du serveur de gestion du cache de fichiers global."]
 
@@ -105,7 +105,7 @@ image:screenshot_gfc_install6.png["Capture d'écran indiquant les informations d
 
 
 
-. Entrez les informations d'identification administratives que vous utiliserez pour accéder à la VM de base du cache de fichiers global et cliquez sur *déployer le réseau de stockage virtuel Fibre Channel Core*. Dans Azure, vous saisissez les identifiants sous forme de nom d'utilisateur et de mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle/de l'instance si vous le souhaitez.
+. Entrez les informations d'identification administratives que vous utiliserez pour accéder à la VM de base du cache de fichiers global et cliquez sur *déployer le réseau de stockage virtuel Fibre Channel Core*. Pour Azure et Google Cloud, vous entrez les identifiants en tant que nom d'utilisateur et mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle/de l'instance si vous le souhaitez.
 +
 image:screenshot_gfc_install7.png["Capture d'écran indiquant les informations de configuration nécessaires à la configuration de l'instance principale du cache de fichiers global."]
 
@@ -182,7 +182,7 @@ image:screenshot_gfc_install6.png["Capture d'écran indiquant les informations d
 
 
 
-. Entrez les informations d'identification administratives que vous utiliserez pour accéder à la VM de base du cache de fichiers global et cliquez sur *déployer le réseau de stockage virtuel Fibre Channel Core*. Dans Azure, vous saisissez les identifiants sous forme de nom d'utilisateur et de mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle si vous le souhaitez.
+. Entrez les informations d'identification administratives que vous utiliserez pour accéder à la VM de base du cache de fichiers global et cliquez sur *déployer le réseau de stockage virtuel Fibre Channel Core*. Pour Azure et Google Cloud, vous entrez les identifiants en tant que nom d'utilisateur et mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle si vous le souhaitez.
 +
 image:screenshot_gfc_install7.png["Capture d'écran indiquant les informations de configuration nécessaires à la configuration de l'instance principale du cache de fichiers global."]
 

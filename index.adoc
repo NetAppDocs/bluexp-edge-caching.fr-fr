@@ -2,8 +2,8 @@
 layout: astra 
 sidebar: sidebar 
 permalink: index.html 
-lead: Enable real-time global file sharing for your distributed workforce by using NetApp’s intelligent Global File Cache. 
-summary: Offrez à vos équipes distribuées un partage global de fichiers en temps réel grâce au cache intelligent de fichiers global de NetApp. 
+lead: 'Enable real-time global file sharing for your distributed workforce by using NetApp"s intelligent Global File Cache.' 
+summary: Activez le partage global de fichiers en temps réel pour vos équipes réparties dans le monde entier en utilisant la fonctionnalité intelligente Global File cache de NetApp. 
 ---
 = Documentation relative au cache de fichiers global
 :hardbreaks:

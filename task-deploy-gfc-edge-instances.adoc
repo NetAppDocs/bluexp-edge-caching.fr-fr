@@ -131,4 +131,4 @@ Le processus d'installation démarre.
 
 
 .Et la suite ?
-Pour plus d'informations sur la configuration avancée de Global File cache Edge, reportez-vous au https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.1.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^].
+Pour plus d'informations sur la configuration avancée de Global File cache Edge, reportez-vous au https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^].

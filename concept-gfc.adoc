@@ -36,7 +36,7 @@ Global File cache offre les fonctionnalités suivantes :
 * Accès transparent depuis les succursales via un espace de noms global avec verrouillage centralisé des fichiers en temps réel
 
 
-En savoir plus sur les fonctionnalités de Global File cache et ses cas d'utilisation https://cloud.netapp.com/global-file-cache["ici"^].
+En savoir plus sur les fonctionnalités de Global File cache et ses cas d'utilisation https://bluexp.netapp.com/global-file-cache["ici"^].
 
 
 
@@ -67,6 +67,7 @@ Lorsqu'il est déployé à l'aide de BlueXP (anciennement Cloud Manager), le cac
 
 * Cloud Volumes ONTAP dans Azure
 * Cloud Volumes ONTAP dans AWS
+* Cloud Volumes ONTAP dans Google Cloud
 
 
 Cette configuration vous permet de déployer et de gérer l'intégralité du déploiement côté serveur de Global File cache, y compris le serveur Global File cache Management Server et Global File cache Core, depuis BlueXP.
@@ -75,9 +76,9 @@ Cette configuration vous permet de déployer et de gérer l'intégralité du dé
 
 === Options de déploiement manuel
 
-Les configurations globales de cache de fichiers sont également prises en charge avec Cloud Volumes ONTAP, Cloud Volumes Service, Azure NetApp Files et Amazon FSX pour les systèmes ONTAP installés sur une infrastructure de stockage de cloud public. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Dans ces installations, les composants côté serveur de Global File cache doivent être configurés et déployés manuellement, et non en utilisant BlueXP.
+Les configurations Global File cache sont également prises en charge avec les systèmes Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSX pour ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Dans ces installations, les composants côté serveur de Global File cache doivent être configurés et déployés manuellement, et non en utilisant BlueXP.
 
-Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.1.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations.
+Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations.
 
 
 
@@ -108,7 +109,7 @@ La topologie référencée dans cet exemple est un modèle en étoile dans leque
 ** Connectivité MPLS (Multiprotocol Label Switching), ExpressRoute ou VPN
 
 
-* Intégration avec les services de domaine Active Directory du client.
+* Intégration aux services de domaine Active Directory du client.
 * Espace de noms DFS pour l'utilisation d'un espace de noms global (recommandé).
 
 
@@ -137,10 +138,10 @@ Dans AWS, cette instance s'exécute sur une instance m4.XLarge ou équivalent (4
 
 
 
-* Lorsqu'elles sont installées avec Cloud Volumes ONTAP dans Azure ou AWS (les configurations prises en charge entièrement déployées via BlueXP), deux options de tarification sont disponibles :
+* Une fois installé avec Cloud Volumes ONTAP (les configurations prises en charge déployées entièrement via BlueXP), il existe deux options de tarification :
 +
-** Pour les systèmes Cloud Volumes ONTAP dans Azure ou AWS, vous pouvez payer annuellement un coût de 3,000 000 $ pour chaque instance de cache de fichiers Edge.
-** Si vous optez pour les systèmes Cloud Volumes ONTAP dans Azure, vous pouvez également choisir le pack Cloud Volumes ONTAP Edge cache. Cette licence basée sur la capacité vous permet de déployer une seule instance Global File cache Edge pour chaque 3 To de capacité provisionnée. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["En savoir plus"].
+** Pour les systèmes Cloud Volumes ONTAP, vous pouvez payer 3,000 $ par instance Global File cache Edge, par an.
+** Pour les systèmes Cloud Volumes ONTAP dans Azure et GCP, vous pouvez également choisir le package Cloud Volumes ONTAP Edge cache. Cette licence basée sur la capacité vous permet de déployer une instance Global File cache Edge unique pour chaque 3 To de capacité achetée. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["En savoir plus"].
 
 
 * Lorsqu'ils sont installés à l'aide des options de déploiement manuel, le prix est différent. Pour obtenir une estimation de haut niveau des coûts, voir https://cloud.netapp.com/global-file-cache/roi["Calcul de votre potentiel d'économies"^] Vous pouvez également consulter votre ingénieur solutions Global File cache pour discuter des meilleures options de déploiement pour votre entreprise.
@@ -156,12 +157,12 @@ Lorsque vous déployez votre première instance Core dans le data Center ou le c
 
 Lorsque vous achetez des licences Edge supplémentaires ou que vous renouvelez votre abonnement, notre service support/opérations met à jour les informations de licence, par exemple le nombre de sites ou la date de fin de l'abonnement. Une fois que le LMS a interrogé le service d'abonnement, les détails de la licence sont automatiquement mis à jour sur l'instance LMS et s'appliquent à vos instances de réseau de réseau central et Edge.
 
-Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.1.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations sur les licences.
+Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations sur les licences.
 
 
 
 == Limites
 
-La version de Global File cache prise en charge dans BlueXP nécessite que la plateforme de stockage back-end utilisée comme stockage central soit un environnement de travail dans lequel vous avez déployé un seul nœud Cloud Volumes ONTAP ou une paire haute disponibilité dans Azure ou AWS.
+La version de Global File cache prise en charge dans BlueXP nécessite que la plateforme de stockage back-end utilisée comme votre stockage central soit un environnement de travail dans lequel vous avez déployé un nœud unique Cloud Volumes ONTAP ou une paire haute disponibilité dans Azure, AWS ou Google Cloud.
 
-À l'heure actuelle, les autres plateformes de stockage et autres fournisseurs cloud ne sont pas prises en charge avec BlueXP, mais elles peuvent être déployées à l'aide de procédures de déploiement héritées. Ces autres configurations, par exemple le cache de fichiers global avec Cloud Volumes ONTAP ou Cloud Volumes Service sur Google Cloud, Azure NetApp Files ou Amazon FSX pour les systèmes ONTAP, sont prises en charge par les procédures héritées. Voir link:https://cloud.netapp.com/global-file-cache/onboarding["Présentation et intégration de Global File cache"^] pour plus d'informations.
+Les autres plateformes de stockage ne sont pas encore prises en charge avec BlueXP, mais peuvent être déployées à l'aide de procédures de déploiement héritées. Ces autres configurations, telles que Global File cache avec Amazon FSX pour les systèmes ONTAP, Azure NetApp Files ou Cloud Volumes Service sur Google Cloud, sont prises en charge à l'aide des procédures héritées. Voir https://bluexp.netapp.com/global-file-cache/onboarding["Présentation et intégration de Global File cache"^] pour plus d'informations.
