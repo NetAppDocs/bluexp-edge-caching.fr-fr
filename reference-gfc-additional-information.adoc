@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-gfc-additional-information.html 
 keywords: global file cache 
-summary: Utilisez les liens suivants pour en savoir plus sur Global File cache et les autres produits NetApp. 
+summary: 'Consultez les liens suivants pour en savoir plus sur la mise en cache BlueXP Edge et d"autres produits NetApp.' 
 ---
 = Informations supplémentaires
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Utilisez les liens suivants pour en savoir plus sur Global File cache e
 
 
 [role="lead"]
-Utilisez les liens suivants pour en savoir plus sur Global File cache et d'autres produits NetApp :
+Utilisez les liens suivants pour en savoir plus sur la mise en cache BlueXP Edge et d'autres produits NetApp :
 
-* FAQ relative au cache global de fichiers
+* FAQ sur la mise en cache BlueXP Edge
 +
 ** Voir une liste de questions fréquemment posées et de réponses https://bluexp.netapp.com/global-file-cache-faq["ici"^]
 
@@ -28,12 +28,12 @@ Utilisez les liens suivants pour en savoir plus sur Global File cache et d'autre
 ** Voir la documentation complémentaire sur tous les produits NetApp https://www.netapp.com/support-and-training/documentation/["ici"^]
 
 
-* Le support client pour les utilisateurs de Global File cache avec Cloud Volumes ONTAP est disponible via les canaux suivants :
+* Le support client pour les utilisateurs de la mise en cache BlueXP Edge avec Cloud Volumes ONTAP est disponible via les canaux suivants :
 +
 ** Résolution assistée de problèmes, gestion des dossiers, base de connaissances, téléchargements, outils, et plus encore https://bluexp.netapp.com/gfc-support["ici"^]
 ** Connectez-vous au site de support NetApp sur https://mysupport.netapp.com[] Avec vos identifiants NSS
 ** Pour obtenir une assistance immédiate concernant les problèmes P1, appelez le +33 1 856.481.3990 00 (option 2).
 
 
-* Le support client de Global File cache qui utilise NetApp Cloud volumes Services et Azure NetApp Files est proposé par votre fournisseur. Veuillez contacter le service d'assistance clientèle de Google ou le service clientèle de Microsoft respectivement.
+* Le support client pour les utilisateurs de la mise en cache BlueXP Edge qui utilisent les services Cloud volumes et Azure NetApp Files est disponible via le support standard de votre fournisseur. Veuillez contacter le service d'assistance clientèle de Google ou le service clientèle de Microsoft respectivement.
 

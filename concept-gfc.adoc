@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-gfc.html 
 keywords: global file cache 
-summary: 'NetApp Global File cache vous permet de consolider les silos de serveurs de fichiers distribués en un seul environnement de stockage global cohérent dans le cloud public. Cela crée un système de fichiers accessible partout dans le cloud que tous les emplacements distants peuvent utiliser comme s"ils étaient locaux.' 
+summary: 'La mise en cache à la périphérie NetApp BlueXP vous permet de regrouper des silos de serveurs de fichiers distribués en une seule empreinte de stockage globale cohérente dans le cloud public. Cela crée un système de fichiers accessible partout dans le cloud que tous les emplacements distants peuvent utiliser comme s"ils étaient locaux.' 
 ---
-= En savoir plus sur Global File cache
+= Découvrez la mise en cache BlueXP Edge
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,21 +14,23 @@ summary: 'NetApp Global File cache vous permet de consolider les silos de serveu
 
 
 [role="lead"]
-NetApp Global File cache vous permet de consolider les silos de serveurs de fichiers distribués en un seul environnement de stockage global cohérent dans le cloud public. Cela crée un système de fichiers accessible partout dans le cloud que tous les emplacements distants peuvent utiliser comme s'ils étaient locaux.
+La mise en cache à la périphérie NetApp BlueXP vous permet de regrouper des silos de serveurs de fichiers distribués en une seule empreinte de stockage globale cohérente dans le cloud public. Cela crée un système de fichiers accessible partout dans le cloud que tous les emplacements distants peuvent utiliser comme s'ils étaient locaux.
+
+La mise en cache BlueXP Edge est disponible dans deux modes de déploiement pour s'adapter à l'architecture de votre entreprise : dans un service intégré combiné dans une instance Cloud Volumes ONTAP (Cloud volumes Edge cache) ou en tant que composant complémentaire de votre stratégie de stockage d'entreprise (Global File cache).
 
 
 
 == Présentation
 
-La mise en œuvre de Global File cache engendre une empreinte du stockage unique et centralisée, par rapport à une architecture de stockage distribuée qui nécessite une gestion des données locales, des sauvegardes, une gestion de la sécurité, un stockage et une infrastructure réparties sur chaque site.
+L'implémentation de la mise en cache BlueXP Edge donne lieu à une empreinte de stockage unique et centralisée, contrairement à une architecture de stockage distribuée qui requiert une gestion des données locales, la sauvegarde, la sécurité, le stockage et l'empreinte de l'infrastructure dans chaque emplacement.
 
-image:diagram_gfc_image1.png["Diagramme illustrant comment les sites distants accèdent à un système de fichiers partagé à l'aide de Global File cache."]
+image:diagram_gfc_image1.png["Diagramme illustrant comment les sites distants accèdent à un seul système de fichiers partagé à l'aide de la mise en cache BlueXP Edge."]
 
 
 
 == Caractéristiques
 
-Global File cache offre les fonctionnalités suivantes :
+La mise en cache BlueXP Edge inclut les fonctionnalités suivantes :
 
 * Consolidez et centralisez vos données dans le cloud public, et exploitez l'évolutivité et les performances de vos solutions de stockage
 * Créez un seul ensemble de données pour les utilisateurs du monde entier et exploitez la mise en cache intelligente des fichiers afin d'améliorer l'accès aux données, la collaboration et les performances
@@ -36,57 +38,57 @@ Global File cache offre les fonctionnalités suivantes :
 * Accès transparent depuis les succursales via un espace de noms global avec verrouillage centralisé des fichiers en temps réel
 
 
-En savoir plus sur les fonctionnalités de Global File cache et ses cas d'utilisation https://bluexp.netapp.com/global-file-cache["ici"^].
+Découvrez plus en détail les fonctionnalités de mise en cache de BlueXP Edge et les cas d'utilisation https://bluexp.netapp.com/global-file-cache["ici"^].
 
 
 
-== Composants du cache de fichiers global
+== Composants de mise en cache BlueXP Edge
 
-Global File cache comprend les composants suivants :
+La mise en cache à la périphérie BlueXP comprend les composants suivants :
 
-* Serveur global de gestion du cache des fichiers
-* Cœur de cache de fichiers global
-* Cache global de fichiers Edge (déployé sur vos sites distants)
+* Serveur de gestion
+* Cœur
+* Périphérie (déploiement sur vos sites distants)
 
 
-L'instance principale de NetApp Global File cache est montée sur vos partages de fichiers d'entreprise hébergés sur la plateforme de stockage interne au choix (par exemple, Cloud Volumes ONTAP, Cloud Volumes Service, Et Azure NetApp Files), puis crée la structure Global File cache qui permet de centraliser et de consolider les données non structurées en un seul ensemble de données, qu'elles résident sur une ou plusieurs plateformes de stockage dans le cloud public.
+L'instance principale de mise en cache BlueXP Edge se monte sur vos partages de fichiers d'entreprise hébergés sur la plateforme de stockage back-end de votre choix (comme Cloud Volumes ONTAP, Cloud Volumes Service, Et Azure NetApp Files) et crée la « structure » de mise en cache BlueXP Edge qui permet de centraliser et de consolider les données non structurées en un seul ensemble de données, qu'elles résident sur une ou plusieurs plateformes de stockage dans le cloud public.
 
-image:diagram_gfc_image2.png["Schéma illustrant les détails d'un déploiement de cache de fichiers global avec des logiciels installés dans les bureaux distants et dans un serveur central dans le cloud."]
+image:diagram_gfc_image2.png["Diagramme illustrant les détails du déploiement de la mise en cache BlueXP Edge, avec un logiciel installé dans des bureaux distants et dans un serveur central dans le cloud."]
 
 
 
 == Plateformes de stockage prises en charge
 
-Les plates-formes de stockage prises en charge pour Global File cache diffèrent selon l'option de déploiement sélectionnée.
+Les plateformes de stockage prises en charge pour la mise en cache BlueXP Edge diffèrent selon l'option de déploiement sélectionnée.
 
 
 
 === Options de déploiement automatisé
 
-Lorsqu'il est déployé à l'aide de BlueXP (anciennement Cloud Manager), le cache de fichiers global est pris en charge avec les types d'environnements de travail suivants :
+La mise en cache BlueXP Edge est prise en charge avec les types d'environnements de travail suivants lorsqu'elle est déployée à l'aide de BlueXP :
 
 * Cloud Volumes ONTAP dans Azure
 * Cloud Volumes ONTAP dans AWS
 * Cloud Volumes ONTAP dans Google Cloud
 
 
-Cette configuration vous permet de déployer et de gérer l'intégralité du déploiement côté serveur de Global File cache, y compris le serveur Global File cache Management Server et Global File cache Core, depuis BlueXP.
+Cette configuration vous permet de déployer et de gérer l'intégralité du déploiement côté serveur de mise en cache BlueXP Edge, y compris le serveur de gestion de la mise en cache BlueXP Edge et le cœur de mise en cache BlueXP Edge, à partir de BlueXP.
 
 
 
 === Options de déploiement manuel
 
-Les configurations Global File cache sont également prises en charge avec les systèmes Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSX pour ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Dans ces installations, les composants côté serveur de Global File cache doivent être configurés et déployés manuellement, et non en utilisant BlueXP.
+Les configurations de mise en cache BlueXP Edge sont également prises en charge avec Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSX pour les systèmes ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Dans ces installations, les composants côté serveur de mise en cache BlueXP Edge doivent être configurés et déployés manuellement, pas à l'aide de BlueXP.
 
 Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations.
 
 
 
-== Fonctionnement de Global File cache
+== Fonctionnement de la mise en cache BlueXP Edge
 
-Global File cache crée une structure logicielle qui met en cache les jeux de données actives dans les bureaux distants à travers le monde. Par conséquent, les utilisateurs de l'entreprise bénéficient d'un accès transparent aux données et de performances optimales à l'échelle mondiale.
+La mise en cache en périphérie BlueXP crée une structure logicielle qui met en cache les datasets actifs dans les bureaux distants à travers le monde. Par conséquent, les utilisateurs de l'entreprise bénéficient d'un accès transparent aux données et de performances optimales à l'échelle mondiale.
 
-image:diagram_gfc_image3.png["Schéma illustrant les composants du cache de fichiers global à la périphérie et au cœur."]
+image:diagram_gfc_image3.png["Un diagramme illustrant les composants de mise en cache de BlueXP en périphérie, à la périphérie et au cœur."]
 
 La topologie référencée dans cet exemple est un modèle en étoile dans lequel le réseau de bureaux distants/emplacements accède à un ensemble commun de données dans le cloud. Les points clés de cet exemple sont les suivants :
 
@@ -95,11 +97,11 @@ La topologie référencée dans cet exemple est un modèle en étoile dans leque
 ** Une plateforme de stockage de cloud public d'entreprise, telle qu'Cloud Volumes ONTAP
 
 
-* Structure globale de cache de fichiers :
+* Fabric de mise en cache BlueXP Edge :
 +
 ** Extension du magasin de données central aux sites distants
-** Instance principale du cache de fichiers global, montage sur les partages de fichiers d'entreprise (SMB).
-** Instances globales File cache Edge s'exécutant dans chaque emplacement distant.
+** Instance principale de mise en cache BlueXP Edge, montage dans les partages de fichiers d'entreprise (SMB).
+** BlueXP Edge Caching instances en périphérie s'exécutant dans chaque emplacement distant.
 ** Présente un partage de fichiers virtuel dans chaque emplacement distant permettant l'accès aux données centrales.
 ** Héberge le cache de fichiers intelligent sur un volume NTFS personnalisé (`D:\`).
 
@@ -117,19 +119,19 @@ La topologie référencée dans cet exemple est un modèle en étoile dans leque
 
 == Le coût
 
-Le coût d'utilisation de Global File cache dépend du type d'installation que vous avez choisi.
+Le coût d'utilisation de la mise en cache BlueXP Edge dépend du type d'installation choisi.
 
 * Toutes les installations nécessitent de déployer un ou plusieurs volumes dans le cloud (par exemple, Cloud Volumes ONTAP, Cloud Volumes Service ou Azure NetApp Files). Ce qui entraîne des frais pour le fournisseur cloud sélectionné.
 * Toutes les installations nécessitent également de déployer au moins deux machines virtuelles dans le cloud. Ce qui entraîne des frais pour le fournisseur cloud sélectionné.
 +
-** Serveur global de gestion du cache des fichiers :
+** Serveur de gestion de la mise en cache BlueXP Edge :
 +
 Dans Azure, cette opération s'exécute sur une machine virtuelle D2S_V3 ou équivalent (2 vCPU/8 Go de RAM) avec SSD standard de 127 Go
 
 +
 Dans AWS, s'exécute sur une instance m4.large ou équivalente (2 vCPU/8 Go de RAM) avec des disques SSD à usage général de 127 Go
 
-** Cœur de cache de fichiers global :
+** Mise en cache BlueXP Edge Core :
 +
 Dans Azure, cette opération s'exécute sur une machine virtuelle D4S_V3 ou équivalente (4 vCPU/16 Go de RAM) avec SSD premium de 127 Go
 
@@ -140,18 +142,18 @@ Dans AWS, cette instance s'exécute sur une instance m4.XLarge ou équivalent (4
 
 * Une fois installé avec Cloud Volumes ONTAP (les configurations prises en charge déployées entièrement via BlueXP), il existe deux options de tarification :
 +
-** Pour les systèmes Cloud Volumes ONTAP, vous pouvez payer 3,000 $ par instance Global File cache Edge, par an.
-** Pour les systèmes Cloud Volumes ONTAP dans Azure et GCP, vous pouvez également choisir le package Cloud Volumes ONTAP Edge cache. Cette licence basée sur la capacité vous permet de déployer une instance Global File cache Edge unique pour chaque 3 To de capacité achetée. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["En savoir plus"].
+** Pour les systèmes Cloud Volumes ONTAP, vous pouvez payer 3,000 $ par instance BlueXP Edge Caching Edge, par an.
+** Pour les systèmes Cloud Volumes ONTAP dans Azure et GCP, vous pouvez également choisir le package Cloud Volumes ONTAP Edge cache. Cette licence basée sur la capacité vous permet de déployer une instance BlueXP Edge cache Edge unique pour chaque 3 To de capacité achetée. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["En savoir plus"^].
 
 
-* Lorsqu'ils sont installés à l'aide des options de déploiement manuel, le prix est différent. Pour obtenir une estimation de haut niveau des coûts, voir https://cloud.netapp.com/global-file-cache/roi["Calcul de votre potentiel d'économies"^] Vous pouvez également consulter votre ingénieur solutions Global File cache pour discuter des meilleures options de déploiement pour votre entreprise.
+* Lorsqu'ils sont installés à l'aide des options de déploiement manuel, le prix est différent. Pour obtenir une estimation de haut niveau des coûts, voir https://bluexp.netapp.com/global-file-cache/roi["Calcul de votre potentiel d'économies"^] Vous pouvez également consulter votre ingénieur solutions NetApp pour discuter des meilleures options de déploiement pour votre entreprise.
 
 
 
 
 == Licences
 
-Global File cache inclut un serveur de gestion des licences (LMS) basé sur logiciel qui vous permet de consolider votre gestion des licences et de déployer des licences vers toutes les instances Core et Edge à l'aide d'un mécanisme automatisé.
+La mise en cache BlueXP Edge inclut un serveur de gestion de licences logiciel (LMS) qui vous permet de consolider la gestion de vos licences et de déployer des licences sur toutes les instances Core et Edge à l'aide d'un mécanisme automatisé.
 
 Lorsque vous déployez votre première instance Core dans le data Center ou le cloud, vous pouvez choisir de désigner cette instance comme LMS pour votre organisation. Cette instance LMS est configurée une fois, se connecte au service d'abonnement (via HTTPS) et valide votre abonnement à l'aide de l'ID client fourni par notre service de support/opérations au moment de l'inscription. Après avoir fait cette désignation, vous associez vos instances Edge au LMS en fournissant votre ID client et l'adresse IP de l'instance LMS.
 
@@ -163,6 +165,6 @@ Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20Us
 
 == Limites
 
-La version de Global File cache prise en charge dans BlueXP nécessite que la plateforme de stockage back-end utilisée comme votre stockage central soit un environnement de travail dans lequel vous avez déployé un nœud unique Cloud Volumes ONTAP ou une paire haute disponibilité dans Azure, AWS ou Google Cloud.
+La version de la mise en cache BlueXP Edge prise en charge dans BlueXP (Cloud volumes Edge cache) nécessite que la plateforme de stockage back-end utilisée comme stockage central soit un environnement de travail dans lequel vous avez déployé un seul nœud ou une paire haute disponibilité Cloud Volumes ONTAP dans Azure, AWS ou Google Cloud.
 
 Les autres plateformes de stockage ne sont pas encore prises en charge avec BlueXP, mais peuvent être déployées à l'aide de procédures de déploiement héritées. Ces autres configurations, telles que Global File cache avec Amazon FSX pour les systèmes ONTAP, Azure NetApp Files ou Cloud Volumes Service sur Google Cloud, sont prises en charge à l'aide des procédures héritées. Voir https://bluexp.netapp.com/global-file-cache/onboarding["Présentation et intégration de Global File cache"^] pour plus d'informations.

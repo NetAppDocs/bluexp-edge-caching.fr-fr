@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-before-you-begin-to-deploy-gfc.html 
 keywords: global file cache, core, edge, management server 
-summary: Avant de commencer à déployer Global File cache dans le cloud et dans vos bureaux distants, vous devez connaître de nombreuses exigences. 
+summary: Il y a de nombreuses exigences à connaître avant de commencer à déployer la mise en cache BlueXP Edge dans le cloud et dans vos bureaux distants. 
 ---
-= Avant de commencer à déployer Global File cache
+= Avant de commencer à déployer la mise en cache BlueXP Edge
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,23 +14,23 @@ summary: Avant de commencer à déployer Global File cache dans le cloud et dans
 
 
 [role="lead"]
-Avant de commencer à déployer Global File cache dans le cloud et dans vos bureaux distants, vous devez connaître de nombreuses exigences.
+Il y a de nombreuses exigences à connaître avant de commencer à déployer la mise en cache BlueXP Edge dans le cloud et dans vos bureaux distants.
 
 
 
-== Considérations relatives à la conception du noyau de File cache global
+== Considérations relatives à la conception centrale de la mise en cache à la périphérie BlueXP
 
-Selon vos besoins, vous devrez peut-être déployer une ou plusieurs instances de base Global File cache pour créer Global File cache Fabric. L'instance principale est conçue pour servir de point de défaillance du trafic entre vos instances globales de cache de fichiers Edge distribuées et les ressources du serveur de fichiers du centre de données, par exemple les partages de fichiers, les dossiers et les fichiers.
+Selon vos besoins, vous devrez peut-être déployer une ou plusieurs instances principales de mise en cache BlueXP Edge pour créer l'environnement de mise en cache BlueXP Edge. L'instance Core est conçue pour diriger le flux de trafic entre vos instances Edge de mise en cache BlueXP distribuées et les ressources du serveur de fichiers du data Center, par exemple les partages de fichiers, les dossiers et les fichiers.
 
-Lorsque vous concevez votre déploiement Global File cache, vous devez déterminer ce qui convient à votre environnement en termes d'évolutivité, de disponibilité des ressources et de redondance. Global File cache Core peut être déployé de plusieurs manières :
+Lorsque vous concevez votre déploiement de mise en cache BlueXP Edge, vous devez déterminer ce qui convient le mieux à votre environnement en termes d'évolutivité, de disponibilité des ressources et de redondance. Le noyau de mise en cache BlueXP Edge peut être déployé de plusieurs manières :
 
-* Instance autonome Fibre Channel Core
-* Conception distribuée Fibre Channel Core Load (mise en veille à froid)
+* Instance autonome
+* Conception distribuée de charge (veille à froid)
 
 
 Voir <<Instructions de dimensionnement>> Pour comprendre le nombre maximal d'instances Edge et le nombre total d'utilisateurs que chaque configuration peut prendre en charge :
 
-Consultez votre ingénieur solutions Global File cache pour connaître les meilleures options de déploiement pour votre entreprise.
+Consultez votre ingénieur solutions NetApp pour découvrir les meilleures options de déploiement pour votre entreprise.
 
 
 
@@ -38,50 +38,50 @@ Consultez votre ingénieur solutions Global File cache pour connaître les meill
 
 Il y a quelques ratios de dimensionnement que vous devez garder à l'esprit lors de la configuration du système initial. Vous devez revoir ces ratios après l'accumulation de certains historiques d'utilisation pour vous assurer que vous utilisez le système de façon optimale. À savoir :
 
-* Rapport des arêtes/cœurs du cache de fichiers global
-* Utilisateurs distribués/ratio Edge de cache de fichiers global
-* Utilisateurs distribués/ratio central de cache de fichier global
+* Ratio arêtes/noyau
+* Utilisateurs distribués/ratio périphérie
+* Ratio utilisateurs/cœur distribué
 
 
 
 
 === Nombre d'instances Edge par instance de noyau
 
-Nos instructions recommandent jusqu'à 10 instances Edge par instance Global File cache Core, avec un maximum de 20 arêtes par instance Global File cache Core. Cette opération dépend dans une grande mesure du type et de la taille moyenne des fichiers de la charge de travail la plus courante. Dans certains cas, avec des charges de travail plus courantes, vous pouvez ajouter plus d'instances Edge par cœur, mais dans ce cas, vous devez contacter votre représentant de compte pour déterminer comment dimensionner correctement le nombre d'instances Edge et Core en fonction des types et tailles des jeux de fichiers.
+Nos instructions recommandent jusqu'à 10 instances Edge par instance principale de mise en cache en périphérie BlueXP, avec un maximum de 20 arêtes par instance principale de mise en cache en périphérie BlueXP. Cette opération dépend dans une grande mesure du type et de la taille moyenne des fichiers de la charge de travail la plus courante. Dans certains cas, avec des charges de travail plus courantes, vous pouvez ajouter plus d'instances Edge par cœur, mais dans ce cas, vous devez contacter votre représentant de compte pour déterminer comment dimensionner correctement le nombre d'instances Edge et Core en fonction des types et tailles des jeux de fichiers.
 
 
-NOTE: Vous pouvez exploiter plusieurs instances Global File cache Edge et Core simultanément pour faire évoluer votre infrastructure en fonction des besoins.
+NOTE: Vous pouvez exploiter plusieurs instances BlueXP Edge Caching Edge et Core simultanément pour faire évoluer votre infrastructure en mode scale-out en fonction des besoins.
 
 
 
 === Nombre d'utilisateurs simultanés par instance Edge
 
-Global File cache Edge gère l'élévation considérable en termes d'algorithmes de mise en cache et de différences au niveau des fichiers. Une seule instance Global File cache Edge peut accueillir jusqu'à 500 utilisateurs par instance physique Edge dédiée, et jusqu'à 300 utilisateurs pour les déploiements virtuels dédiés. Cette opération dépend dans une grande mesure du type et de la taille moyenne des fichiers de la charge de travail la plus courante. Pour les types de fichiers collaboratifs plus importants, guidez jusqu'à 50 % du nombre maximal d'utilisateurs par limite inférieure de cache de fichier global (selon le déploiement physique ou virtuel). Pour les éléments Office les plus courants avec une taille de fichier moyenne < 1 Mo, guide vers la limite supérieure de 100 % d'utilisateurs par Global File cache Edge (selon le déploiement physique ou virtuel).
+La mise en cache à la périphérie BlueXP gère le poids des algorithmes de mise en cache et la différenciation au niveau des fichiers. Une instance Edge unique peut accueillir jusqu'à 500 utilisateurs par instance _physique_ Edge dédiée, et jusqu'à 300 utilisateurs pour des déploiements _virtuels_ dédiés. Cette opération dépend dans une grande mesure du type et de la taille moyenne des fichiers de la charge de travail la plus courante. Pour les types de fichiers collaboratifs plus volumineux, dirigez-vous vers 50 % du nombre maximal d'utilisateurs par limite inférieure de la mise en cache en périphérie BlueXP (selon le déploiement physique ou virtuel). Pour les éléments Office plus courants avec une taille de fichier moyenne < 1 Mo, guidez-vous vers la limite supérieure de 100 % d'utilisateurs par Edge (selon le déploiement physique ou virtuel).
 
 
-NOTE: Global File cache Edge détecte s'il s'exécute sur une instance virtuelle ou physique et limite le nombre de connexions SMB au partage de fichiers virtuel local à un maximum de 300 ou 500 connexions simultanées.
+NOTE: La mise en cache en périphérie BlueXP détecte s'il s'exécute sur une instance virtuelle ou physique et limite le nombre de connexions SMB au partage de fichiers virtuel local à un maximum de 300 ou 500 connexions simultanées.
 
 
 
 === Nombre d'utilisateurs simultanés par instance Core
 
-L'instance principale de cache de fichiers global est extrêmement évolutive, avec un nombre d'utilisateurs simultanés recommandé de 3,000 utilisateurs par cœur. Cette opération dépend dans une grande mesure du type et de la taille moyenne des fichiers de la charge de travail la plus courante.
+L'instance principale de mise en cache en périphérie BlueXP est extrêmement évolutive, avec un nombre d'utilisateurs simultanés recommandé de 3,000 utilisateurs par cœur. Cette opération dépend dans une grande mesure du type et de la taille moyenne des fichiers de la charge de travail la plus courante.
 
-Consultez votre ingénieur solutions Global File cache pour connaître les meilleures options de déploiement pour votre entreprise.
+Consultez votre ingénieur solutions NetApp pour découvrir les meilleures options de déploiement pour votre entreprise.
 
 
 
 == Prérequis
 
-Les conditions préalables décrites dans cette section concernent les composants installés dans le cloud : Global File cache Management Server et Global File cache Core.
+Les prérequis décrits dans cette section concernent les composants installés dans le cloud : le serveur de gestion de la mise en cache en périphérie BlueXP et le cœur de mise en cache en périphérie BlueXP.
 
-Les prérequis Global File cache Edge sont décrits link:download-gfc-resources.html#global-file-cache-edge-requirements["ici"].
+Les conditions préalables requises pour la mise en cache de BlueXP Edge sont décrites sous le lien:download-gfc-resources.html#bluexp-Edge cache-exigences-périphérie[ici].
 
 
 
 === Plateforme de stockage (volumes)
 
-La plateforme de stockage interne, dans ce cas, votre instance Cloud Volumes ONTAP déployée, doit présenter les partages de fichiers SMB. Tout partage qui sera exposé via Global File cache doit permettre au groupe Everyone de contrôler entièrement au niveau du partage, tout en limitant les autorisations par le biais des autorisations NTFS.
+La plateforme de stockage interne, dans ce cas, votre instance Cloud Volumes ONTAP déployée, doit présenter les partages de fichiers SMB. Tous les partages qui seront exposés via la mise en cache BlueXP Edge doivent autoriser le contrôle complet du groupe « Everyone » au niveau du partage, tout en limitant les autorisations via les autorisations NTFS.
 
 Si vous n'avez pas configuré au moins un partage de fichiers SMB sur l'instance Cloud Volumes ONTAP, vous devez disposer des informations suivantes pour pouvoir configurer ces informations lors de l'installation :
 
@@ -93,9 +93,9 @@ Nous vous recommandons d'augmenter ce volume suffisamment pour prendre en charge
 
 
 
-=== Serveur global de gestion du cache des fichiers
+=== Serveur de gestion de la mise en cache BlueXP Edge
 
-Ce serveur Global File cache Management requiert un accès externe via HTTPS (port TCP 443) pour se connecter au service d'abonnement du fournisseur cloud et pour accéder aux URL suivantes :
+Le serveur de gestion de la mise en cache BlueXP Edge requiert un accès externe via HTTPS (port TCP 443) pour se connecter au service d'abonnement du fournisseur cloud et pour accéder à ces URL :
 
 * \https://gfcproxyforcm-prod.azurewebsites.net/
 * \https://rest.zuora.com/v1/subscriptions/
@@ -104,29 +104,29 @@ Ce serveur Global File cache Management requiert un accès externe via HTTPS (po
 * \https://talonlicensing.table.core.windows.net
 
 
-Ce port doit être exclu de tout périphérique d'optimisation WAN ou de toute stratégie de restriction de pare-feu pour que le logiciel Global File cache fonctionne correctement.
+Ce port doit être exclu de tout dispositif d'optimisation WAN ou toute politique de restriction de pare-feu pour que le logiciel de mise en cache à la périphérie BlueXP fonctionne correctement.
 
-Le serveur de gestion du cache de fichiers global nécessite également un nom NetBIOS unique (géographique) pour l'instance (par exemple, Fibre Channel-MS1).
-
-
-NOTE: Un serveur de gestion peut prendre en charge plusieurs instances globales de base de cache de fichiers déployées dans différents environnements de travail. Lorsqu'il est déployé depuis BlueXP, chaque environnement de travail dispose de son propre système de stockage back-end distinct et ne contienne pas les mêmes données.
+Le serveur de gestion de la mise en cache BlueXP Edge requiert également un nom NetBIOS unique (géographique) pour l'instance (tel que GFC-MS1).
 
 
+NOTE: Un serveur de gestion peut prendre en charge plusieurs instances principales de mise en cache BlueXP Edge déployées dans différents environnements de travail. Lorsqu'il est déployé depuis BlueXP, chaque environnement de travail dispose de son propre système de stockage back-end distinct et ne contienne pas les mêmes données.
 
-=== Cœur de cache de fichiers global
 
-Ce noyau de cache de fichiers global écoute la plage de ports TCP 6618-6630. En fonction de votre configuration de pare-feu ou de Groupe de sécurité réseau (NSG), il se peut que vous deviez autoriser explicitement l'accès à ces ports via des règles de port entrant. Ces ports doivent également être exclus de tout périphérique d'optimisation WAN ou de toute stratégie de restriction de pare-feu pour que le logiciel Global File cache fonctionne correctement.
 
-La configuration requise pour le module Global File cache est la suivante :
+=== Noyau de mise en cache BlueXP Edge
+
+Le noyau de mise en cache de la périphérie BlueXP écoute la plage de ports TCP 6618-6630. En fonction de votre configuration de pare-feu ou de Groupe de sécurité réseau (NSG), il se peut que vous deviez autoriser explicitement l'accès à ces ports via des règles de port entrant. Ces ports doivent également être exclus des systèmes d'optimisation WAN ou des politiques de restriction des pare-feu pour que le logiciel de mise en cache à la périphérie BlueXP fonctionne correctement.
+
+Les exigences essentielles de la mise en cache BlueXP Edge sont les suivantes :
 
 * Un nom NetBIOS unique (géographique) pour l'instance (par exemple, le réseau de stockage/réseau/réseau/réseau/réseau/réseau/réseau/réseau/réseau/réseau/réseau/
 * Nom de domaine Active Directory
 +
-** Les instances de cache de fichiers global doivent être jointes à votre domaine Active Directory.
-** Les instances de cache de fichiers global doivent être gérées dans une unité organisationnelle spécifique (ou) du cache de fichiers global et exclues des GPO de l'entreprise hérités.
+** Les instances doivent être jointes à votre domaine Active Directory.
+** Les instances doivent être gérées dans une unité organisationnelle spécifique de la mise en cache en périphérie BlueXP et exclues des objets de stratégie de groupe hérités de l'entreprise.
 
 
-* Compte de service. Les services de cette base de cache de fichiers globale fonctionnent comme un compte utilisateur de domaine spécifique. Ce compte, également appelé compte de service, doit disposer des privilèges suivants sur chacun des serveurs SMB qui seront associés à l'instance principale de cache de fichiers global :
+* Compte de service. Les services du Core s'exécutent en tant que compte d'utilisateur de domaine spécifique. Ce compte, également appelé compte de service, doit disposer des privilèges suivants sur chacun des serveurs SMB qui seront associés à l'instance principale de mise en cache de la périphérie BlueXP :
 +
 ** Le compte de service provisionné doit être un utilisateur de domaine.
 +
@@ -144,8 +144,8 @@ Selon le niveau des restrictions et des stratégies de groupe dans l'environneme
 
 === Serveur de gestion des licences
 
-* Le serveur de gestion des licences de cache de fichiers global (LMS) doit être configuré sur une édition Microsoft Windows Server 2016 Standard ou Datacenter ou Windows Server 2019 Standard ou Datacenter, de préférence sur l'instance Global File cache Core du datacenter ou du Cloud.
-* Si vous avez besoin d'une instance LMS Global File cache distincte, vous devez installer le dernier package d'installation du logiciel Global File cache sur une instance Microsoft Windows Server vierge.
+* Le serveur de gestion de licences de mise en cache BlueXP Edge doit être configuré sur Microsoft Windows Server 2016 Standard ou Datacenter Edition ou Windows Server 2019 Standard ou Datacenter Edition, de préférence sur l'instance principale de mise en cache BlueXP Edge dans le data Center ou le cloud.
+* Si vous avez besoin d'une instance de LMS de mise en cache BlueXP Edge distincte, vous devez installer le pack d'installation le plus récent du logiciel de mise en cache BlueXP Edge sur une instance Microsoft Windows Server vierge.
 * L'instance LMS doit pouvoir se connecter au service d'abonnement (Internet public) via HTTPS (port TCP 443).
 * Les instances Core et Edge doivent se connecter à l'instance LMS à l'aide du protocole HTTPS (port TCP 443).
 
@@ -154,7 +154,7 @@ Selon le niveau des restrictions et des stratégies de groupe dans l'environneme
 
 === Réseau (accès externe)
 
-Le LMS Global File cache requiert un accès externe via HTTPS (port TCP 443) aux URL suivantes.
+Le système de gestion de la mise en cache BlueXP Edge requiert un accès externe via HTTPS (port TCP 443) aux URL suivantes.
 
 * Si vous utilisez une licence basée sur l'abonnement Fibre Channel :
 +
@@ -181,7 +181,7 @@ Le LMS Global File cache requiert un accès externe via HTTPS (port TCP 443) aux
 
 === Mise en réseau
 
-* Pare-feu : les ports TCP doivent être autorisés entre les instances Global File cache Edge et Core.
-* Ports TCP Global File cache : 443 (HTTPS), 6618-6630.
-* Les périphériques d'optimisation réseau (tels que Riverbed Steelhead) doivent être configurés pour passer par les ports spécifiques à Global File cache (TCP 6618-6630).
+* Pare-feu : les ports TCP doivent être autorisés entre les instances BlueXP Edge Caching Edge et Core.
+* Ports TCP pour la mise en cache à la périphérie BlueXP : 443 (HTTPS), 6618-6630.
+* Les périphériques d'optimisation réseau (tels que Riverbed Steelhead) doivent être configurés pour permettre la mise en cache des ports spécifiques BlueXP Edge (TCP 6618-6630).
 

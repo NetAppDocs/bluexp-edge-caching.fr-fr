@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-gfc-enduser-training.html 
 keywords: global file cache, training 
-summary: 'Vous pouvez former vos utilisateurs aux meilleures pratiques d"accès aux fichiers partagés via Global File cache.' 
+summary: 'Vous devez former vos utilisateurs aux bonnes pratiques d"accès aux fichiers partagés via la mise en cache BlueXP Edge.' 
 ---
 = Formation des utilisateurs finaux
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: 'Vous pouvez former vos utilisateurs aux meilleures pratiques d"accès 
 
 
 [role="lead"]
-Vous pouvez former vos utilisateurs aux meilleures pratiques d'accès aux fichiers partagés via Global File cache.
+Vous devez former vos utilisateurs aux bonnes pratiques d'accès aux fichiers partagés via la mise en cache BlueXP Edge.
 
-Il s'agit de la phase finale du déploiement de Global File cache, phase d'implémentation par l'utilisateur final.
+Il s'agit de la dernière phase du déploiement de la mise en cache BlueXP en périphérie, la phase d'implémentation destinée aux utilisateurs finaux.
 
-Afin de préparer et de rationaliser le processus d'intégration des utilisateurs finaux, utilisez le modèle d'e-mail ci-dessous qui vous aidera à former les utilisateurs finaux sur les moyens de travailler dans un environnement de « données centrales ». Cela aidera vos utilisateurs à tirer parti de tous les avantages de la solution Global File cache. Nous avons également publié une vidéo qui peut être partagée à "former" les utilisateurs si nécessaire.
+Afin de préparer et de rationaliser le processus d'intégration des utilisateurs finaux, utilisez le modèle d'e-mail ci-dessous qui vous aidera à former les utilisateurs finaux sur les moyens de travailler dans un environnement de « données centrales ». Vos utilisateurs pourront ainsi profiter de tous les avantages de la solution de mise en cache BlueXP Edge. Nous avons également publié une vidéo qui peut être partagée à "former" les utilisateurs si nécessaire.
 
 Personnaliser et transférer les ressources suivantes aux utilisateurs finaux pour les préparer au déploiement :
 

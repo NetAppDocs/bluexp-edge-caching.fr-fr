@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, gfc, global file cache' 
-summary: Découvrez les nouveautés de Global File cache. 
+summary: Découvrez les nouveautés de la mise en cache BlueXP Edge. 
 ---
-= Nouveautés de Global File cache
+= Nouveautés de la mise en cache BlueXP Edge
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Découvrez les nouveautés de Global File cache.
 
 
 [role="lead"]
-Découvrez les nouveautés de Global File cache.
+Découvrez les nouveautés de la mise en cache BlueXP Edge.
 
 
 

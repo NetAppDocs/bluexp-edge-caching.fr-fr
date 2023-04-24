@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: download-gfc-resources.html 
 keywords: global file cache, edge 
-summary: Vous devez connaître de nombreuses exigences avant de commencer à installer le logiciel Global File cache Edge dans vos bureaux distants. 
+summary: Avant de commencer à installer le logiciel BlueXP Edge Caching Edge dans vos bureaux distants, vous devez connaître de nombreuses exigences. 
 ---
-= Avant de commencer à déployer les instances Global File cache Edge
+= Avant de commencer à déployer les instances BlueXP Edge Caching
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Vous devez connaître de nombreuses exigences avant de commencer à ins
 
 
 [role="lead"]
-Vous devez connaître de nombreuses exigences avant de commencer à installer le logiciel Global File cache Edge dans vos bureaux distants.
+Avant de commencer à installer le logiciel BlueXP Edge Caching Edge dans vos bureaux distants, vous devez connaître de nombreuses exigences.
 
 
 
 == Télécharger les ressources requises
 
-Téléchargez les modèles virtuels du cache de fichiers global que vous envisagez d'utiliser dans vos succursales, le package d'installation du logiciel et la documentation de référence supplémentaire :
+Téléchargez les modèles virtuels de mise en cache BlueXP Edge que vous prévoyez d'utiliser dans vos succursales, le pack d'installation du logiciel et de la documentation de référence supplémentaire :
 
 * Modèle virtuel Windows Server 2016 :
 +
@@ -32,7 +32,7 @@ https://repo.cloudsync.netapp.com/gfc/2k16_GFC_2_2_0_41IMAGE.zip["Windows Server
 https://repo.cloudsync.netapp.com/gfc/2k19-2.1.zip["Windows Server 2019 .OVA avec réseau NetApp compatible avec Windows (VMware vSphere 6.5+)"^]
 https://repo.cloudsync.netapp.com/gfc/2k19_GFC_2_2_0_41IMAGE.zip["Windows Server 2019 .VHDX avec réseau Fibre Channel NetApp (Microsoft Hyper-v)"^]
 
-* Logiciel Global File cache Edge :
+* Logiciel de mise en cache en périphérie BlueXP :
 +
 https://repo.cloudsync.netapp.com/gfc/GFC-2-2-0-41-Release.exe["Package d'installation logicielle Fibre Channel NetApp (.EXE)"^]
 
@@ -46,50 +46,50 @@ https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Gui
 
 
 
-link:task-deploy-gfc-edge-instances.html#update-global-file-cache-edge-software["Effectuez la procédure suivante"] Pour mettre à niveau votre logiciel Global File cache Edge.
+Lien:task-Deploy-gfc-Edge-instances.html#update-bluexp-Edge cache-logiciel[Suivez ces étapes] pour mettre à niveau votre logiciel BlueXP Edge Caching cache.
 
 
-NOTE: Lors du déploiement de Global File cache sur Windows Server 2016, vous devez utiliser .NET Framework 4.8 et Windows WebView2.
-
-
-
-== Conception et déploiement de Global File cache Edge
-
-Selon vos besoins, vous devrez peut-être déployer une ou plusieurs instances Global File cache Edge en fonction des sessions utilisateur simultanées dans une succursale. L'instance Edge présente le partage de fichiers virtuels aux utilisateurs finaux au sein de la succursale, qui a été étendu de façon transparente à partir de l'instance principale de cache de fichiers global associée. L'Edge de cache de fichiers global doit contenir un `D:\` Volume NTFS, qui contient les fichiers mis en cache au sein de la succursale.
-
-
-NOTE: Pour Global File cache Edge, il est important de comprendre le link:concept-before-you-begin-to-deploy-gfc.html#sizing-guidelines["instructions de dimensionnement"]. Cela vous aidera à concevoir correctement votre déploiement de Global File cache. Vous devrez également déterminer ce qui convient à votre environnement en termes d'évolutivité, de disponibilité des ressources et de redondance.
+NOTE: Lors du déploiement de la mise en cache de périphérie BlueXP sur Windows Server 2016, vous devez utiliser .NET Framework 4.8 et Windows WebView2 Framework.
 
 
 
-=== Instance globale File cache Edge
+== Conception et déploiement de la mise en cache BlueXP Edge
 
-Lors du déploiement d'une instance Global File cache Edge, vous devez provisionner une seule machine virtuelle, en déployant Windows Server 2016 Standard ou Datacenter Edition, ou Windows Server 2019 Standard ou Datacenter Edition, ou en utilisant le cache de fichiers global `.OVA` ou `.VHD` Modèle comprenant le système d'exploitation Windows Server Choice et le logiciel Global File cache.
+Selon vos besoins, vous devrez peut-être déployer une ou plusieurs instances Edge en fonction des sessions utilisateur simultanées dans une succursale. L'instance Edge présente le partage de fichiers virtuels aux utilisateurs de la succursale, qui a été étendu de manière transparente à partir de l'instance principale de mise en cache en périphérie BlueXP associée. La périphérie de la mise en cache BlueXP doit contenir un `D:\` Volume NTFS, qui contient les fichiers mis en cache au sein de la succursale.
+
+
+NOTE: Pour la mise en cache en périphérie de BlueXP, il est important de comprendre le link:concept-before-you-begin-to-deploy-gfc.html#sizing-guidelines["instructions de dimensionnement"]. Cela vous aidera à concevoir correctement votre déploiement de mise en cache BlueXP Edge. Vous devrez également déterminer ce qui convient à votre environnement en termes d'évolutivité, de disponibilité des ressources et de redondance.
+
+
+
+=== Instance BlueXP Edge Caching Edge
+
+Lors du déploiement d'une instance de mise en cache BlueXP Edge, vous devez provisionner une seule machine virtuelle, soit en déployant Windows Server 2016 Standard, Datacenter Edition, soit Windows Server 2019 Standard ou Datacenter Edition, soit en utilisant la mise en cache à la périphérie `.OVA` ou `.VHD` Modèle, qui inclut le système d'exploitation Windows Server de votre choix et le logiciel de mise en cache BlueXP Edge.
 
 
 
 ==== Pas de temps
 
-. Déployez le modèle virtuel Global File cache, la machine virtuelle Windows Server 2016 ou l'édition Standard ou Datacenter de Windows Server 2019.
+. Déployez le modèle virtuel de mise en cache en périphérie BlueXP, ou une machine virtuelle Windows Server 2016, ou Windows Server 2019 Standard ou Datacenter.
 . Assurez-vous que la machine virtuelle est connectée au réseau, qu'elle est jointe au domaine et accessible via RDP.
-. Installez la dernière version du logiciel Global File cache Edge.
-. Identifier le serveur de gestion du cache de fichiers global et l'instance principale.
-. Configurez l'instance Global File cache Edge.
+. Installez le dernier logiciel BlueXP Edge Caching Edge.
+. Identifiez le serveur de gestion de la mise en cache en périphérie BlueXP et l'instance principale.
+. Configurez l'instance BlueXP Edge Caching Edge.
 
 
 
 
-== Configuration requise globale File cache Edge
+== Exigences de la mise en cache en périphérie BlueXP
 
-Global File cache Edge est conçu pour fonctionner avec toutes les plateformes prenant en charge Windows Server 2016 et 2019, ce qui permet d'offrir une INFRASTRUCTURE IT simplifiée aux bureaux distants et au-delà. La fonctionnalité NetApp Global File cache peut être déployée dans presque tous les cas de figure sur votre infrastructure matérielle, la virtualisation ou les environnements de cloud hybride/public existants, s'ils répondent à quelques critères de base.
+La mise en cache en périphérie BlueXP est conçue pour fonctionner sur toutes les plateformes qui prennent en charge Windows Server 2016 et 2019, ce qui simplifie L'IT pour les bureaux distants et au-delà. La mise en cache BlueXP Edge peut être déployée dans votre infrastructure matérielle existante, ainsi que dans vos environnements de virtualisation ou de cloud hybride/public dans presque tous les cas s'ils répondent à quelques exigences de base.
 
-Global File cache Edge requiert les ressources matérielles et logicielles suivantes pour fonctionner de manière optimale. Pour plus d'informations sur les directives générales de dimensionnement, reportez-vous à la section link:concept-before-you-begin-to-deploy-gfc.html#sizing-guidelines["instructions de dimensionnement"].
+L'Edge requiert les ressources matérielles et logicielles suivantes pour fonctionner de manière optimale. Pour plus d'informations sur les directives générales de dimensionnement, reportez-vous à la section link:concept-before-you-begin-to-deploy-gfc.html#sizing-guidelines["instructions de dimensionnement"].
 
 
 
 === Serveur renforcé
 
-Le package d'installation Global File cache crée une appliance logicielle renforcée sur n'importe quelle instance de Microsoft Windows Server. _Ne pas désinstaller_ le paquet de cache de fichiers global. La désinstallation de Global File cache a un impact sur les fonctionnalités de l'instance de serveur et peut nécessiter une reconstruction complète de l'instance de serveur.
+Le package d'installation de la mise en cache BlueXP Edge crée une appliance logicielle renforcée sur n'importe quelle instance de Microsoft Windows Server. _Ne pas désinstaller_ le package de mise en cache BlueXP Edge. La désinstallation de la mise en cache BlueXP Edge a un impact sur les fonctionnalités de l'instance de serveur et peut nécessiter une reconstruction complète de l'instance de serveur.
 
 
 
@@ -106,7 +106,7 @@ Le package d'installation Global File cache crée une appliance logicielle renfo
 
 === Besoins en matière de déploiement virtuel
 
-Les plateformes d'hyperviseur sont réputées faire l'objet d'une dégradation des performances du point de vue du sous-système de stockage (par exemple, la latence). Pour des performances optimales à l'aide de Global File cache, il est recommandé d'utiliser une instance de serveur physique avec un disque SSD.
+Les plateformes d'hyperviseur sont réputées faire l'objet d'une dégradation des performances du point de vue du sous-système de stockage (par exemple, la latence). Pour des performances optimales avec la mise en cache BlueXP Edge, une instance de serveur physique avec SSD est recommandée.
 
 Pour des performances optimales dans les environnements virtuels, outre les besoins de l'hôte physique, les exigences et les réserves de ressources suivantes doivent être respectées :
 
@@ -125,13 +125,13 @@ VMware vSphere 6.x et versions ultérieures :
 +
 ** Le provisionnement du disque doit être défini sur *thick provisioning Eager mis à zéro*.
 ** Les partages de disque dur doivent être définis sur *High*.
-** Devices.hotplug doit être défini sur *Faux* à l'aide du client vSphere pour empêcher Microsoft Windows de présenter les lecteurs Global File cache comme amovibles.
+** Devices.hotplug doit être défini sur *False* à l'aide du client vSphere pour empêcher Microsoft Windows de présenter les lecteurs de cache BlueXP Edge comme amovibles.
 
 
 * Mise en réseau : l'interface réseau doit être définie sur *VMXNET3* (peut nécessiter VM Tools).
 
 
-Le cache de fichiers global s'exécute sur Windows Server 2016 et 2019. La plateforme de virtualisation doit donc prendre en charge le système d'exploitation, ainsi que l'intégration avec des utilitaires qui améliorent les performances du système d'exploitation invité et la gestion de la machine virtuelle, tels que VM Tools.
+Edge s'exécute sur Windows Server 2016 et 2019. La plate-forme de virtualisation doit donc prendre en charge le système d'exploitation, ainsi que l'intégration avec des utilitaires améliorant les performances du système d'exploitation invité de la machine virtuelle et la gestion de la machine virtuelle, tels que VM Tools.
 
 
 
@@ -155,18 +155,18 @@ Pour plus d'informations, reportez-vous à la section https://repo.cloudsync.net
 
 === Mise en réseau
 
-* Pare-feu : les ports TCP doivent être autorisés entre les instances Global File cache Edge et Management Server et Core.
+* Pare-feu : les ports TCP doivent être autorisés entre les instances BlueXP Edge Caching et Management Server et Core.
 +
-Ports TCP Global File cache : 443 (HTTPS - LMS), 6618 - 6630.
+Ports TCP de mise en cache BlueXP Edge : 443 (HTTPS - LMS), 6618 - 6630.
 
-* Les périphériques d'optimisation réseau (tels que Riverbed Steelhead) doivent être configurés pour passer par les ports spécifiques à Global File cache (TCP 6618-6630).
+* Les périphériques d'optimisation réseau (tels que Riverbed Steelhead) doivent être configurés pour permettre la mise en cache des ports spécifiques BlueXP Edge (TCP 6618-6630).
 
 
 
 
 === Bonnes pratiques en matière d'applications et de postes de travail client
 
-Global File cache s'intègre de manière transparente aux environnements du client, ce qui permet aux utilisateurs d'accéder aux données centralisées via leurs postes de travail clients exécutant des applications d'entreprise. À l'aide du cache de fichiers global, les données sont accessibles par le biais d'un mappage direct de lecteur ou d'un espace de noms DFS. Pour plus d'informations sur Global File cache Fabric, la mise en cache intelligente des fichiers et leurs principaux aspects, consultez le link:concept-before-you-begin-to-deploy-gfc.html["Avant de commencer à déployer Global File cache"^] section.
+La mise en cache à la périphérie BlueXP s'intègre de manière transparente dans les environnements du client. Les utilisateurs peuvent ainsi accéder aux données centralisées via leurs postes de travail clients et exécuter des applications d'entreprise. La mise en cache BlueXP Edge permet d'accéder aux données via un mappage de disque direct ou un espace de noms DFS. Pour plus d'informations sur la structure de mise en cache à la périphérie BlueXP, la mise en cache intelligente des fichiers et les principaux aspects du logiciel, consultez le link:concept-before-you-begin-to-deploy-gfc.html["Avant de commencer à déployer la mise en cache BlueXP Edge"^] section.
 
 Pour garantir une expérience et des performances optimales, il est important de respecter les exigences et les meilleures pratiques du client Microsoft Windows, comme indiqué dans le Guide de l'utilisateur Global File cache. Cela s'applique à toutes les versions de Microsoft Windows.
 
@@ -176,9 +176,9 @@ Pour plus d'informations, reportez-vous à la section https://repo.cloudsync.net
 
 === Meilleures pratiques relatives aux pare-feu et à l'antivirus
 
-Même si Global File cache fait un effort raisonnable pour vérifier que les suites d'applications antivirus les plus courantes sont compatibles avec Global File cache, NetApp ne peut garantir et n'est pas responsable des incompatibilités ou des problèmes de performances provoqués par ces programmes, de leurs mises à jour, packs de services ou de modifications associés.
+La mise en cache BlueXP Edge déploie des efforts raisonnables pour vérifier que les suites d'applications antivirus les plus courantes sont compatibles avec Global File cache. Toutefois, NetApp ne peut garantir et n'est pas responsable des incompatibilités ou des problèmes de performance causés par ces programmes, ou encore des mises à jour, des Service Packs ou des modifications qui leur sont associés.
 
-Global File cache ne recommande pas l'installation ni l'application de solutions antivirus ou de surveillance sur une instance activée par Global File cache (Core ou Edge). Si une solution doit être installée, par choix ou selon des règles, les meilleures pratiques et recommandations suivantes doivent être appliquées. Pour les suites antivirus courantes, consultez l'Annexe A dans le https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^].
+NetApp ne recommande pas l'installation ni l'application de solutions de surveillance ou antivirus sur les instances activées pour la mise en cache en périphérie BlueXP (Core ou Edge). Si une solution doit être installée, par choix ou selon des règles, les meilleures pratiques et recommandations suivantes doivent être appliquées. Pour les suites antivirus courantes, consultez l'Annexe A dans le https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^].
 
 
 
@@ -187,24 +187,24 @@ Global File cache ne recommande pas l'installation ni l'application de solutions
 * Pare-feu Microsoft :
 +
 ** Conserver les paramètres de pare-feu par défaut.
-** Recommandation : laissez les paramètres et services de pare-feu Microsoft sur la valeur par défaut de Désactivé, et non pas démarré pour les instances standard Global File cache Edge.
+** Recommandation : laissez les paramètres et services du pare-feu Microsoft au paramètre par défaut OFF et ne le démarrez pas pour les instances de mise en cache en périphérie BlueXP standard.
 ** Recommandation : laissez LES paramètres et les services de pare-feu Microsoft sur ACTIVÉ par défaut et démarré pour les instances Edge qui exécutent également le rôle Domain Controller.
 
 
 * Pare-feu d'entreprise :
 +
-** L'instance Core du cache de fichiers global écoute les ports TCP 6618-6630, assurez-vous que les instances Global File cache Edge peuvent se connecter à ces ports TCP.
-** Les instances globales de cache de fichiers requièrent des communications vers le serveur de gestion du cache de fichiers global sur le port TCP 443 (HTTPS).
+** L'instance principale de mise en cache en périphérie BlueXP écoute les ports TCP 6618-6630, assurez-vous que les instances Edge de mise en cache en périphérie BlueXP peuvent se connecter à ces ports TCP.
+** Les instances de mise en cache BlueXP Edge requièrent des communications vers le serveur de gestion de la mise en cache BlueXP Edge sur le port TCP 443 (HTTPS).
 
 
-* Les solutions/périphériques d'optimisation réseau doivent être configurés pour transmettre les ports spécifiques à Global File cache.
+* Les solutions/périphériques d'optimisation réseau doivent être configurés pour permettre la mise en cache directe de BlueXP Edge via des ports spécifiques.
 
 
 
 
 === Meilleures pratiques anti-virus
 
-Cette section vous aide à comprendre les conditions requises lors de l'exécution d'un logiciel antivirus sur une instance Windows Server exécutant Global File cache. Global File cache a testé les produits antivirus les plus utilisés, notamment Cylance, McAfee, Symantec, Sophos, Trend micro, Kaspersky, foule Strike, Cisco AMP, Tannium et Windows Defender pour une utilisation en conjonction avec Global File cache. Le logiciel antivirus doit être certifié par NetApp et il n'est pris en charge que s'il est configuré avec la liste d'exclusion appropriée. Reportez-vous à l'annexe A du https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^]
+NetApp a testé les produits antivirus les plus utilisés, notamment Cylance, McAfee, Symantec, Sophos, Trend micro, Kaspersky, Crowd Strike, Cisco AMP, Tannium et Windows Defender à utiliser avec la mise en cache BlueXP Edge. Le logiciel antivirus doit être certifié par NetApp et il n'est pris en charge que s'il est configuré avec la liste d'exclusion appropriée. Reportez-vous à l'annexe A du https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^]
 
 
 NOTE: L'ajout d'un antivirus à une appliance Edge peut avoir un impact de 10 à 20 % sur les performances des utilisateurs.
@@ -217,7 +217,7 @@ Pour plus d'informations, reportez-vous à la section https://repo.cloudsync.net
 
 Les logiciels antivirus ou d'autres utilitaires d'indexation ou d'analyse tiers ne doivent jamais analyser le lecteur D:\ sur l'instance Edge. Ces analyses du lecteur de serveur Edge D:\ entraînent de nombreuses demandes ouvertes de fichiers pour l'intégralité de l'espace de noms de cache. Cela permet d'effectuer des fœtus en fichiers via le WAN vers tous les serveurs de fichiers optimisés dans le data Center. Une inondation de la connexion WAN et une charge inutile sur l'instance Edge se produisent, ce qui entraîne une dégradation des performances.
 
-Outre le lecteur D:\, le répertoire et les processus Global File cache suivants doivent généralement être exclus de toutes les applications antivirus :
+Outre le disque D:\, les répertoires et processus de mise en cache BlueXP Edge suivants doivent généralement être exclus de toutes les applications antivirus :
 
 * `C:\Program Files\TalonFAST\`
 * `C:\Program Files\TalonFAST\Bin\LMClientService.exe`
@@ -244,29 +244,29 @@ Outre le lecteur D:\, le répertoire et les processus Global File cache suivants
 
 == Politique de support NetApp
 
-Les instances globales de cache de fichiers sont spécialement conçues pour le cache de fichiers global en tant qu'application principale s'exécutant sur une plate-forme Windows Server 2016 et 2019. Le cache de fichiers global nécessite un accès prioritaire aux ressources de plate-forme, par exemple, disque, mémoire, interfaces réseau, et peuvent allouer des exigences élevées sur ces ressources. Les déploiements virtuels requièrent des réservations pour la mémoire/CPU et des disques haute performance.
+Les instances de mise en cache BlueXP Edge ont été spécialement conçues en tant qu'application principale s'exécutant sur une plateforme Windows Server 2016 et 2019. La mise en cache BlueXP Edge requiert un accès prioritaire aux ressources de la plateforme, par exemple le disque, la mémoire, les interfaces réseau et peuvent avoir des exigences élevées sur ces ressources. Les déploiements virtuels requièrent des réservations pour la mémoire/CPU et des disques haute performance.
 
-* Pour les déploiements dans les succursales de Global File cache, les services et applications pris en charge sur le serveur exécutant Global File cache sont limités à :
+* Pour les déploiements de succursales, les services et applications pris en charge sur le serveur exécutant la mise en cache BlueXP Edge sont limités à :
 +
 ** DNS/DHCP
-** Contrôleur de domaine Active Directory (le cache de fichiers global doit se trouver sur un volume distinct)
+** Contrôleur de domaine Active Directory (la mise en cache en périphérie BlueXP doit se trouver sur un volume distinct)
 ** Services d'impression
 ** Microsoft System Center Configuration Manager (SCCM)
-** Global File cache, les agents système et les applications antivirus côté client sont approuvés
+** La mise en cache de BlueXP Edge approuve les agents système côté client et les applications antivirus
 
 
-* Le support et la maintenance de NetApp s'appliquent uniquement au cache de fichiers global.
+* Le support et la maintenance NetApp s'appliquent uniquement à la mise en cache BlueXP Edge.
 * Logiciels de productivité de secteur d'activité, généralement très gourmands en ressources, par exemple serveurs de bases de données, serveurs de messagerie, etc. ne sont pas pris en charge.
-* Le client est responsable de tout logiciel de cache de fichiers non global pouvant être installé sur le serveur exécutant Global File cache :
+* Le client doit disposer de tout logiciel de mise en cache en périphérie non BlueXP qui peut être installé sur le serveur exécutant la mise en cache BlueXP Edge :
 +
-** Si un package logiciel tiers provoque des conflits de logiciels ou de ressources avec Global File cache ou si les performances sont compromises, l'organisation de support de Global File cache peut exiger du client qu'il désactive ou supprime le logiciel du serveur exécutant Global File cache.
-** Le client est responsable de l'installation, de l'intégration, du support et de la mise à niveau de tout logiciel ajouté au serveur exécutant l'application Global File cache.
+** Si un pack logiciel tiers provoque des conflits de logiciels ou de ressources avec la mise en cache BlueXP Edge ou si les performances sont compromises, l'organisation de support NetApp peut demander au client de désactiver ou de supprimer le logiciel du serveur exécutant la mise en cache BlueXP Edge.
+** Le client assume la responsabilité de l'installation, de l'intégration, du support et de la mise à niveau de tout logiciel ajouté au serveur exécutant l'application de mise en cache BlueXP Edge.
 
 
-* Les utilitaires/agents de gestion des systèmes, tels que les outils antivirus et les agents de licences, peuvent coexister. Toutefois, à l'exception des services et applications pris en charge répertoriés ci-dessus, ces applications ne sont pas prises en charge par Global File cache et les mêmes directives doivent toujours être respectées :
+* Les utilitaires/agents de gestion des systèmes, tels que les outils antivirus et les agents de licences, peuvent coexister. Toutefois, à l'exception des services et applications pris en charge répertoriés ci-dessus, ces applications ne sont pas prises en charge par la mise en cache BlueXP Edge et les instructions ci-dessus doivent toujours être respectées :
 +
 ** Le client est responsable de l'installation, de l'intégration, de l'assistance et de la mise à niveau de tout logiciel ajouté.
-** Si un client installe un pack logiciel tiers à l'origine, ou est soupçonné de causer, des conflits de logiciels ou de ressources avec Global File cache ou si les performances sont compromises, les services de support de Global File cache peuvent exiger de désactiver/supprimer le logiciel.
+** Si un client installe un pack logiciel tiers qui cause ou est soupçonné d'être à l'origine de conflits de logiciels ou de ressources avec la mise en cache BlueXP Edge ou si les performances sont compromises, le service de support de la mise en cache BlueXP Edge peut désactiver/supprimer le logiciel.
 
 
 

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-deploy-gfc-edge-instances.html 
 keywords: global file cache, edge 
-summary: Après avoir vérifié que votre environnement répond à toutes les exigences, vous installez le logiciel Global File cache Edge dans chaque bureau distant. 
+summary: Après avoir vérifié que votre environnement répond à toutes les exigences, vous installez le logiciel BlueXP Edge Caching Edge dans chaque bureau distant. 
 ---
-= Déploiement des instances Global File cache Edge
+= Déployez les instances BlueXP Edge Caching
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: Après avoir vérifié que votre environnement répond à toutes les ex
 
 
 [role="lead"]
-Après avoir vérifié que votre environnement répond à toutes les exigences, vous installez le logiciel Global File cache Edge dans chaque bureau distant.
+Après avoir vérifié que votre environnement répond à toutes les exigences, vous installez le logiciel BlueXP Edge Caching Edge dans chaque bureau distant.
 
 
 
 == Avant de commencer
 
-Pour effectuer les tâches de configuration de Global File cache Edge, vous devez disposer des informations suivantes :
+Pour effectuer les tâches de configuration de la mise en cache BlueXP Edge, vous devez disposer des informations suivantes :
 
-* Adresses IP statiques pour chaque instance Global File cache
+* Adresses IP statiques pour chaque instance de mise en cache BlueXP Edge
 * Masque de sous-réseau
 * Adresse IP de la passerelle
-* Le FQDN que vous souhaitez attribuer à chaque serveur de cache de fichiers global
+* Nom de domaine complet que vous souhaitez attribuer à chaque serveur de mise en cache BlueXP Edge
 * Suffixe DNS (facultatif)
 * Nom d'utilisateur et mot de passe d'un utilisateur administratif dans le domaine
 * Le FQDN et/ou l'adresse IP des serveurs Core associés
@@ -36,17 +36,17 @@ Pour effectuer les tâches de configuration de Global File cache Edge, vous deve
 
 === Ports TCP couramment utilisés
 
-Plusieurs ports TCP sont utilisés par les services Global File cache. Il est obligatoire que les périphériques puissent communiquer sur ces ports et qu'ils soient exclus de tout périphérique d'optimisation WAN ou de toute stratégie de restriction de pare-feu :
+Plusieurs ports TCP sont utilisés par les services de mise en cache BlueXP Edge. Il est obligatoire que les périphériques puissent communiquer sur ces ports et qu'ils soient exclus de tout périphérique d'optimisation WAN ou de toute stratégie de restriction de pare-feu :
 
-* Port TCP pour la licence du cache de fichiers global : 443
-* Ports TCP du cache de fichiers global : 6618-6630
-
-
+* Port TCP de licence pour la mise en cache BlueXP Edge : 443
+* Ports TCP pour la mise en cache en périphérie BlueXP : 6618-6630
 
 
-== Déployez le modèle virtuel Global File cache
 
-Le modèle virtuel  `.OVA` et `.VHD`) Les images contiennent la dernière version du logiciel Global File cache. Si vous déployez Global File cache à l'aide du `.OVA` ou `.VHD` Modèle de machine virtuelle (VM), suivez les étapes décrites dans cette section. Nous partons du principe que vous comprenez comment déployer le système `.OVA` ou `.VHD` modèle sur la plateforme d'hyperviseur désignée
+
+== Déployez le modèle virtuel de mise en cache en périphérie BlueXP
+
+Le modèle virtuel  `.OVA` et `.VHD`) Contiennent la dernière version du logiciel de mise en cache BlueXP Edge. Si vous déployez la mise en cache BlueXP Edge à l'aide de `.OVA` ou `.VHD` Modèle de machine virtuelle (VM), suivez les étapes décrites dans cette section. Nous partons du principe que vous comprenez comment déployer le système `.OVA` ou `.VHD` modèle sur la plateforme d'hyperviseur désignée
 
 Assurez-vous que les préférences VM, y compris les réservations de ressources, correspondent aux exigences décrites dans link:download-gfc-resources.html#physical-hardware-requirements["Besoins en matière de déploiement virtuel"^].
 
@@ -60,56 +60,56 @@ Assurez-vous que les préférences VM, y compris les réservations de ressources
 
 . Une fois que le modèle virtuel a été déployé et que vous avez configuré les paramètres de la machine virtuelle, démarrez la machine virtuelle.
 . Lors de l'amorçage initial, lorsque le système d'exploitation Windows Server 2016 ou 2019 est en préparation à la première utilisation, complétez l'expérience prête à l'emploi en installant les pilotes appropriés et en installant les composants nécessaires pour le matériel correspondant.
-. Une fois l'installation de base de l'instance Global File cache Edge terminée, le système d'exploitation Windows Server 2016 ou 2019 vous guide à travers un assistant de configuration initiale pour configurer les spécificités du système d'exploitation, telles que la localisation et la clé de produit.
+. Une fois l'installation de base de l'instance de mise en cache BlueXP Edge terminée, le système d'exploitation Windows Server 2016 ou 2019 vous guide tout au long de l'assistant de configuration initiale pour configurer les caractéristiques du système d'exploitation telles que la localisation et la clé de produit.
 . Une fois l'Assistant de configuration initial terminé, connectez-vous localement au système d'exploitation Windows Server 2016 ou 2019 avec les informations d'identification suivantes :
 +
 ** Nom d'utilisateur : *FASTAdmin*
 ** Mot de passe : *Tal0nFAST!*
 
 
-. Configurez votre machine virtuelle Windows Server, rejoignez le domaine Active Directory de l'entreprise et passez à la section Configuration de Global File cache Edge.
+. Configurez votre machine virtuelle Windows Server, rejoignez le domaine Active Directory de l'entreprise et passez à la section Configuration de la mise en cache en périphérie BlueXP.
 
 
 
 
-== Configurez l'instance Global File cache Edge
+== Configurez l'instance BlueXP Edge Caching Edge
 
-L'instance Global File cache Edge se connecte à un noyau Global File cache pour permettre aux utilisateurs de la succursale d'accéder aux ressources du serveur de fichiers du data Center.
+L'instance de mise en cache en périphérie BlueXP se connecte à un cœur de mise en cache en périphérie BlueXP pour fournir aux utilisateurs des succursales un accès aux ressources du serveur de fichiers du data Center.
 
 
 NOTE: L'instance Edge doit être sous licence dans le cadre de votre déploiement Cloud Volumes ONTAP avant de commencer la configuration. Voir link:concept-gfc.html#licensing["Licences"^] pour plus d'informations sur les licences.
 
-Si votre configuration nécessite l'installation de plusieurs cœurs de cache de fichiers globaux en raison d'un grand nombre d'instances Edge, vous allez configurer certaines instances Edge afin qu'elles se connectent au premier Core et d'autres au second Core. Assurez-vous que vous disposez du FQDN ou de l'adresse IP, ainsi que d'autres informations requises, pour l'instance Core correcte.
+Si votre configuration nécessite l'installation de plusieurs cœurs de mise en cache BlueXP Edge en raison d'un grand nombre d'instances Edge, vous configurez certaines instances Edge pour vous connecter au premier cœur et d'autres pour vous connecter au second cœur. Assurez-vous que vous disposez du FQDN ou de l'adresse IP, ainsi que d'autres informations requises, pour l'instance Core correcte.
 
 Pour configurer l'instance Edge, procédez comme suit :
 
 .Étapes
 . Cliquez sur *Perform* en regard de l'étape de configuration du noyau non cochée répertoriée dans la section « étapes de configuration du bord » de l'assistant de configuration initiale. Cela ouvre un nouvel onglet, Fibre Channel Edge, et affiche la section _instances Core_.
-. Fournissez l'ID *Cloud Fabric* du serveur de base du cache de fichiers global. L'ID Cloud Fabric est généralement le nom NetBIOS ou l'emplacement géographique du serveur de fichiers back-end.
-. Indiquez le *FQDN/adresse IP* du serveur de base du cache de fichiers global :
+. Fournissez le *ID de structure cloud* du serveur principal de mise en cache de périphérie BlueXP. L'ID Cloud Fabric est généralement le nom NetBIOS ou l'emplacement géographique du serveur de fichiers back-end.
+. Indiquez le *FQDN/adresse IP* du serveur principal de mise en cache de périphérie BlueXP :
 +
 .. (Facultatif) cochez la case *SSL* pour activer la prise en charge SSL pour un cryptage amélioré de la périphérie au cœur.
 .. Entrez le nom d'utilisateur et le mot de passe, qui sont les informations d'identification du compte de service utilisé sur le Core.
 
 
-. Cliquez sur *Ajouter* pour confirmer l'ajout de l'appliance Global File cache Core. Une boîte de confirmation s'affiche. Cliquez sur *OK* pour le fermer.
+. Cliquez sur *Ajouter* pour confirmer l'ajout de l'appliance BlueXP Edge Caching Core. Une boîte de confirmation s'affiche. Cliquez sur *OK* pour le fermer.
 +
-image:screenshot_gfc_edge_install1.png["Capture d'écran montrant les entrées Edge qui identifient le noyau du cache de fichiers global qui sera utilisé."]
+image:screenshot_gfc_edge_install1.png["Copie d'écran montrant les entrées Edge qui identifient le cœur de mise en cache de BlueXP Edge qui sera utilisé."]
 
 
 
 
 
-== Mettre à jour le logiciel Global File cache Edge
+== Mettez à jour le logiciel BlueXP Edge Caching
 
-Global File cache publie fréquemment des mises à jour du logiciel, soit des correctifs, des améliorations, soit de nouvelles fonctions. Bien que le modèle virtuel (`.OVA` et `.VHD`) Les images contiennent la dernière version du logiciel Global File cache, il est possible qu'une version plus récente soit disponible sur le portail de téléchargement du support NetApp.
+La mise en cache à la périphérie BlueXP envoie fréquemment des mises à jour vers le logiciel, qu'il s'agisse de correctifs, d'améliorations ou de nouvelles fonctionnalités. Bien que le modèle virtuel (`.OVA` et `.VHD`) Contenant la dernière version du logiciel de mise en cache BlueXP Edge, il est possible qu'une version plus récente soit disponible sur le portail de téléchargement du support NetApp.
 
-Assurez-vous que vos instances Global File cache sont à jour avec la dernière version.
+Assurez-vous que vos instances de mise en cache BlueXP Edge sont à jour avec la dernière version.
 
 
 NOTE: Ce pack logiciel peut également être utilisé pour des installations immaculées sous Microsoft Windows Server 2016 Édition Standard ou Datacenter, Windows Server 2019 Édition Standard ou Datacenter, ou dans le cadre de votre stratégie de mise à niveau.
 
-Vous trouverez ci-dessous les étapes nécessaires à la mise à jour du package d'installation de Global File cache :
+Vous trouverez ci-dessous les étapes nécessaires à la mise à jour du package d'installation de la mise en cache BlueXP Edge :
 
 .Étapes
 . Après avoir enregistré la dernière installation dans l'instance Windows Server souhaitée, double-cliquez dessus pour exécuter l'exécutable d'installation.
