@@ -32,7 +32,7 @@ Pour démarrer rapidement, suivez ces étapes ou faites défiler jusqu'aux secti
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Déployez Cloud Volumes ONTAP
 [role="quick-margin-para"]
-Déployez Cloud Volumes ONTAP et configurez les partages de fichiers SMB. Pour plus d'informations, voir https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^].
+Déployez Cloud Volumes ONTAP et configurez les partages de fichiers SMB. Pour plus d'informations, voir https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez le serveur de gestion de la mise en cache BlueXP Edge
 [role="quick-margin-para"]
@@ -54,7 +54,7 @@ Voir link:task-deploy-gfc-edge-instances.html["Déploiement des instances BlueXP
 
 === Déployez Cloud Volumes ONTAP comme plateforme de stockage
 
-La mise en cache BlueXP Edge prend en charge Cloud Volumes ONTAP déployé dans Azure, AWS et Google Cloud. Pour obtenir des informations détaillées sur les prérequis, les exigences et les instructions de déploiement, voir https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^]
+La mise en cache BlueXP Edge prend en charge Cloud Volumes ONTAP déployé dans Azure, AWS et Google Cloud. Pour obtenir des informations détaillées sur les prérequis, les exigences et les instructions de déploiement, voir https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^]
 
 Notez la condition supplémentaire de mise en cache BlueXP Edge suivante :
 

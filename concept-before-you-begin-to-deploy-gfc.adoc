@@ -89,7 +89,7 @@ Si vous n'avez pas configuré au moins un partage de fichiers SMB sur l'instance
 * Le nom et la taille du volume que vous souhaitez créer, le nom de l'agrégat sur lequel le volume sera créé, et le nom du partage.
 
 
-Nous vous recommandons d'augmenter ce volume suffisamment pour prendre en charge le jeu de données total de l'application, ainsi que la capacité à évoluer en conséquence en fonction de la croissance du jeu de données. Si l'environnement de travail compte plusieurs agrégats, reportez-vous à https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html["Gestion des agrégats existants"^] pour déterminer quel agrégat dispose de l'espace le plus disponible pour le nouveau volume.
+Nous vous recommandons d'augmenter ce volume suffisamment pour prendre en charge le jeu de données total de l'application, ainsi que la capacité à évoluer en conséquence en fonction de la croissance du jeu de données. Si l'environnement de travail compte plusieurs agrégats, reportez-vous à https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-aggregates.html["Gestion des agrégats existants"^] pour déterminer quel agrégat dispose de l'espace le plus disponible pour le nouveau volume.
 
 
 
