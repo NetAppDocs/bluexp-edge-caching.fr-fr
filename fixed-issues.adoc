@@ -18,6 +18,32 @@ Consultez les problèmes qui ont été résolus dans la mise en cache BlueXP Edg
 
 
 
+== 1er août 2023 (version 2.3)
+
+* Les corrections suivantes de l'interface utilisateur Optimus Configuration ont été effectuées :
++
+** Affiche des informations significatives pour les erreurs au lieu des chaînes d'exception.
+** Affiche correctement la date d'expiration de la licence au lieu de n'importe quelle valeur par défaut.
+** Affiche correctement les champs nom d'utilisateur/mot de passe lorsque SSL est activé dans l'interface utilisateur.
+** Ne répond pas lorsqu'un GFC Core inaccessible est configuré dans l'onglet de configuration Optimus UI Edge.
+** Permet de sélectionner plusieurs noms de cache/d'arête dans la liste déroulante Edge.
+
+
+* Les informations de résumé de licence s'affichent correctement lors de l'affichage des licences expirées et non expirées.
+* Correction du redémarrage du service TappN uniquement lorsque la configuration a été correctement mise à jour.
+* Ajout d'un bouton d'actualisation dans l'assistant de première utilisation pour afficher le nombre d'arêtes.
+* Les informations SSL sont maintenant affichées dans la page de résumé de l'assistant de première utilisation.
+* Ajout d'une infrastructure dans Tum pour permettre la configuration des délais d'expiration de minidump et effectuer un minidump correctement.
+* Optimus et l'assistant de première utilisation affichent le nombre de licences approprié et une exception lorsque le nombre de licences devient zéro.
+* Optimus PSM affiche maintenant un message d'erreur approprié lorsque le nom du serveur Edge saisi est vide.
+* Résolution d'un problème lorsque les travaux de pré-remplissage ne sont pas correctement appliqués à plusieurs noms de cache dans Optimus PSM.
+* La configuration du Gestionnaire de licences est améliorée pour afficher les erreurs matérielles au lieu des erreurs logicielles.
+* L'interface utilisateur d'enregistrement de Zoura affiche une erreur si elle est déjà configurée.
+* L'interface utilisateur Optimus et Optimus PSM indiquent maintenant les besoins en processeur et en mémoire de 8 CPU et de 32 Go de RAM respectivement.
+
+
+
+
 == 27 mars 2023 (version 2.2)
 
 * Correction d'un problème de conversion du format horaire de l'exécution d'un travail de pré-remplissage pour l'option « heure de la dernière modification ».
@@ -75,16 +101,4 @@ Consultez les problèmes qui ont été résolus dans la mise en cache BlueXP Edg
 * Le service de pré-remplissage TappN est mis à jour pour ignorer les fichiers de récupération si l'espace de cache libre est inférieur à la valeur seuil inférieure.
 * Résolution d'un problème dans le service du serveur de gestion des licences (LMS) lors de l'écriture d'un journal de suivi.
 * L'infrastructure de consignation pour Tum est mise à jour pour être plus évolutive avec des performances élevées.
-
-
-
-
-== 17 décembre 2021 (version 1.2.0)
-
-* L'interface utilisateur de configuration (Optimus) est améliorée pour valider les entrées de champ de date lors de l'ajout de travaux de préremplissage.
-* Le pré-peuplement est amélioré pour surveiller l'utilisation du cache et ignore le remplissage si l'utilisation du cache atteint près des paramètres de nettoyage du cache.
-* Suppression de la dépendance matérielle du service LMS (License Management Server) exécutée localement avec la configuration de stratégie.
-* Le pilote du noyau Fibre Channel est amélioré pour éviter une panne dans le service SMB Server sous Windows Server 2016/2019.
-* Correction d'une exception dans le service LMS.
-* Les types de démarrage de service pour le service du serveur de gestion des licences (LMS), le service client du Gestionnaire de licences (LMC) et le service de préremplissage (TappN) sont remplacés par « retard automatique » à « automatique ».
 

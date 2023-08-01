@@ -30,4 +30,4 @@ link:media/Global_File_Cache_Onboarding_Email.msg["Modèle de messagerie Windows
 * Communications d'intégrationlink:https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%20Customer%20Onboarding%20-%20Draft.docx["Document Word (.docx)"]
 
 
-Reportez-vous au chapitre 14 du https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour du matériel supplémentaire.
+Reportez-vous au chapitre 14 de la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.3.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour du matériel supplémentaire.

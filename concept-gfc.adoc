@@ -80,7 +80,7 @@ Cette configuration vous permet de déployer et de gérer l'intégralité du dé
 
 Les configurations de mise en cache BlueXP Edge sont également prises en charge avec Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSX pour les systèmes ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Dans ces installations, les composants côté serveur de mise en cache BlueXP Edge doivent être configurés et déployés manuellement, pas à l'aide de BlueXP.
 
-Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations.
+Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.3.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations.
 
 
 
@@ -159,7 +159,7 @@ Lorsque vous déployez votre première instance Core dans le data Center ou le c
 
 Lorsque vous achetez des licences Edge supplémentaires ou que vous renouvelez votre abonnement, notre service support/opérations met à jour les informations de licence, par exemple le nombre de sites ou la date de fin de l'abonnement. Une fois que le LMS a interrogé le service d'abonnement, les détails de la licence sont automatiquement mis à jour sur l'instance LMS et s'appliquent à vos instances de réseau de réseau central et Edge.
 
-Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.2.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations sur les licences.
+Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.3.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations sur les licences.
 
 
 
