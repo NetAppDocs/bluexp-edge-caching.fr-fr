@@ -384,7 +384,6 @@
   <block id="50a1dc01b7312307c34a888071586955" category="list-text">Copiez le numéro de série de votre compte à l'étape 2 ci-dessus, vérifiez sa sécurité, puis lisez la Déclaration de confidentialité des données NetApp.</block>
   <block id="cc8b0535948da368f832027c19b7f853" category="list-text">Veillez à copier le numéro de série du compte (960xxxx) utilisé ci-dessus pour le champ Numéro de série. Le traitement du compte sera ainsi accéléré.</block>
   <block id="ca8b4d0fc39e2135cbcdf391be62059b" category="list-text">\https://gfcproxyforcm-prod.azurewebsites.net/</block>
-  <block id="0375f4855be072c7d856a0233cc21de9" category="section-title">Prise en charge des solutions des fournisseurs cloud</block>
   <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">Amazon FSX pour ONTAP</block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files</block>
   <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">Cloud Volumes Service pour Google Cloud</block>
@@ -680,9 +679,7 @@
   <block id="e1d2e1a634647fd631081bc4f6f8e523" category="list-text">Pour utiliser la fonctionnalité *Créer un cas*, vous devez d'abord associer vos informations d'identification du site de support NetApp à votre connexion BlueXP.<block ref="2a0d8b66ca9e99d023b48cf25f40fb12" category="inline-link-rx"></block>.</block>
   <block id="e49aa971c20ec071f1b5bbc3c7266769" category="list-text">Si vous ouvrez un dossier pour un système ONTAP doté d'un numéro de série, votre compte NSS doit être associé au numéro de série de ce système.</block>
   <block id="c7b7a5ae9f37fd7d24e4d641b9186fe9" category="paragraph">Cette erreur peut signifier que le compte NSS et la société d'enregistrement auquel il est associé n'est pas la même société d'enregistrement pour le numéro de série du compte BlueXP (par exemple 960xxxx) ou le numéro de série de l'environnement de travail. Vous pouvez demander de l'aide en utilisant l'une des options suivantes :</block>
-  <block id="0c7db2bd63c891adb2c0fa4527805d72" category="paragraph">L'enregistrement du support est requis pour votre compte BlueXP et pour chaque système Cloud Volumes ONTAP.</block>
   <block id="28164bf9e881ddc9e7ff74744bfce180" category="paragraph">L'enregistrement des deux types de numéros de série offre des fonctionnalités telles que l'ouverture de tickets de support et la génération automatique de tickets. L'inscription est terminée en ajoutant des comptes du site de support NetApp (NSS) à BlueXP, comme décrit ci-dessous.</block>
-  <block id="e922b9aa0836a1d93e11cac0fe4c9004" category="paragraph">Pour obtenir un support technique sur les solutions des fournisseurs cloud suivants, consultez la section « obtention d'aide » dans la documentation BlueXP pour ce produit.</block>
   <block id="5a19febf1dcb23c10e8dcfde64ba764c" category="section-title">Enregistrez votre compte BlueXP pour bénéficier de la prise en charge NetApp</block>
   <block id="6bbc2ba432f59ab65ee3d8ac5a58336e" category="paragraph">Pour vous inscrire au support et activer les droits de support, un utilisateur de votre compte BlueXP doit associer un compte sur le site de support NetApp à sa connexion BlueXP. Le fait de vous inscrire au support NetApp dépend de la présence ou non d'un compte sur le site de support NetApp (NSS).</block>
   <block id="0c788a722f31f8f0cf36539ee04615cf" category="list-text">Sélectionnez *Ajouter des informations d'identification NSS* et suivez l'invite authentification du site de support NetApp (NSS).</block>
@@ -767,4 +764,9 @@
   <block id="3bcc153cef59db2afe99744853c8dbe7" category="list-text">Mémoire (RAM) : minimum : 32 Go réglé sur *statique*.</block>
   <block id="2bf278f1b394b05a5448ef798a8d652f" category="list-text">Processeur (CPU) : la réservation des cycles CPU doit être définie. Minimum : 8 cœurs de CPU virtuels à 10000 MHz.</block>
   <block id="dd252ee19a826baa2383e45dcf0c937f" category="list-text">Mémoire (RAM) : minimum : réservation de 32 Go.</block>
+  <block id="ece19bab46695021f109a5e50f08bebe" category="paragraph">L'enregistrement au support est requis pour recevoir le support technique spécifique à BlueXP et à ses solutions et services de stockage. L'enregistrement au support est également requis pour activer les principaux workflows des systèmes Cloud Volumes ONTAP.</block>
+  <block id="8a3d807608e632d188a288fc5f4aa7eb" category="paragraph">L'inscription au support n'active pas le support NetApp pour un service de fichiers de fournisseur cloud. Pour obtenir de l'aide concernant un service de fichiers d'un fournisseur cloud, son infrastructure ou toute solution utilisant le service, consultez la section « obtention d'aide » de la documentation BlueXP associée à ce produit.</block>
+  <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">Bénéficiez du support pour les services de fichiers d'un fournisseur cloud</block>
+  <block id="f6185bb12f5e53c800be8cda7fbca65b" category="paragraph">Pour obtenir de l'aide concernant un service de fichiers d'un fournisseur cloud, son infrastructure ou toute solution utilisant le service, consultez la section « obtention d'aide » de la documentation BlueXP associée à ce produit.</block>
+  <block id="3880ae5df9fdc4d0fc4a6d00a2239530" category="paragraph">Pour bénéficier du support technique spécifique à BlueXP et à ses solutions et services de stockage, utilisez les options de support décrites ci-dessous.</block>
 </blocks>
