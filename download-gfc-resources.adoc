@@ -95,8 +95,8 @@ Le package d'installation de la mise en cache BlueXP Edge crée une appliance lo
 
 === Configuration matérielle physique requise
 
-* Au moins 4 cœurs de processeurs
-* 16 Go minimum de RAM
+* 8 cœurs de processeurs minimum
+* 32 Go de RAM minimum
 * Carte réseau 1 Gbit/s dédiée unique ou redondante
 * Disque dur SAS ou SSD 10 000 tours/min (recommandé)
 * Contrôleur RAID avec fonctionnalité de mise en cache de l'écriture différée activée
@@ -112,15 +112,15 @@ Pour des performances optimales dans les environnements virtuels, outre les beso
 
 Microsoft Hyper-V 2012 R2 et versions ultérieures :
 
-* Processeur (CPU) : les processeurs doivent être définis comme *statique* : minimum : 4 cœurs CPU virtuels.
-* Mémoire (RAM) : minimum : 16 Go définis comme *statique*.
+* Processeur (CPU) : les CPU doivent être définis sur *statique* : minimum : 8 cœurs de CPU virtuels.
+* Mémoire (RAM) : minimum : 32 Go réglé sur *statique*.
 * Provisionnement du disque dur : les disques durs doivent être configurés comme *disque fixe*.
 
 
 VMware vSphere 6.x et versions ultérieures :
 
-* Processeur (CPU) : la réservation des cycles CPU doit être définie. Minimum : 4 cœurs de CPU virtuels à 10000 MHz.
-* Mémoire (RAM) : minimum : réservation de 16 Go.
+* Processeur (CPU) : la réservation des cycles CPU doit être définie. Minimum : 8 cœurs de CPU virtuels à 10000 MHz.
+* Mémoire (RAM) : minimum : réservation de 32 Go.
 * Provisionnement du disque dur :
 +
 ** Le provisionnement du disque doit être défini sur *thick provisioning Eager mis à zéro*.
