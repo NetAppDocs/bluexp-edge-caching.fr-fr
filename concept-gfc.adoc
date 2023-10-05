@@ -131,12 +131,18 @@ Dans Azure, cette opération s'exécute sur une machine virtuelle D2S_V3 ou équ
 +
 Dans AWS, s'exécute sur une instance m4.large ou équivalente (2 vCPU/8 Go de RAM) avec des disques SSD à usage général de 127 Go
 
++
+Dans Google Cloud, cette opération s'exécute sur une instance n2-standard-2 ou équivalente (2 vCPU/8 Go de RAM) avec un SSD générique de 127 Go
+
 ** Mise en cache BlueXP Edge Core :
 +
-Dans Azure, cette opération s'exécute sur une machine virtuelle D4S_V3 ou équivalente (4 vCPU/16 Go de RAM) avec SSD premium de 127 Go
+Dans Azure, cette opération s'exécute sur une machine virtuelle D8s_V4 ou une machine virtuelle équivalente (8 vCPU/32 Go de RAM) avec un SSD premium de 127 Go
 
 +
-Dans AWS, cette instance s'exécute sur une instance m4.XLarge ou équivalent (4 vCPU/16 Go de RAM) avec un SSD générique de 127 Go
+Dans AWS, cette opération s'exécute sur une instance m4.2xlarge ou équivalente (8 vCPU/32 Go de RAM) avec un SSD générique de 127 Go
+
++
+Dans Google Cloud, il s'exécute sur une instance n2-standard-8 ou équivalente (8 vCPU/32 Go de RAM) avec un SSD générique de 127 Go
 
 
 
