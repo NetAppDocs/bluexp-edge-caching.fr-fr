@@ -34,7 +34,7 @@ https://repo.cloudsync.netapp.com/gfc/2k19_GFC_2_3_0_55IMAGE.zip["Windows Server
 
 * Logiciel de mise en cache Edge BlueXP :
 +
-https://repo.cloudsync.netapp.com/gfc/GFC-2-3-0-55-Release.exe["Package d'installation logicielle Fibre Channel NetApp (.EXE)"^]
+https://repo.cloudsync.netapp.com/gfc/GFC-2-4-1-72-Release.exe["Package d'installation logicielle Fibre Channel NetApp (.EXE)"^]
 
 * Tableaux de bord Global File cache pour Cloud Insights :
 +
