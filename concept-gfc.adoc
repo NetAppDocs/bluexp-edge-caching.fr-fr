@@ -16,7 +16,7 @@ summary: 'La mise en cache à la périphérie NetApp BlueXP vous permet de regro
 [role="lead"]
 La mise en cache à la périphérie NetApp BlueXP vous permet de regrouper des silos de serveurs de fichiers distribués en une seule empreinte de stockage globale cohérente dans le cloud public. Cela crée un système de fichiers accessible partout dans le cloud que tous les emplacements distants peuvent utiliser comme s'ils étaient locaux.
 
-La mise en cache BlueXP Edge est disponible dans deux modes de déploiement pour s'adapter à l'architecture de votre entreprise : dans un service intégré combiné dans une instance Cloud Volumes ONTAP (Cloud volumes Edge cache) ou en tant que composant complémentaire de votre stratégie de stockage d'entreprise (Global File cache).
+La mise en cache BlueXP Edge est disponible dans deux modes de déploiement adaptés à votre architecture : en tant que service intégré associé à une instance Cloud Volumes ONTAP appelée Cloud volumes Edge cache (CVEC) ou en tant que composant complémentaire de votre stratégie de stockage d'entreprise, appelée Global File cache (GFC).
 
 
 
