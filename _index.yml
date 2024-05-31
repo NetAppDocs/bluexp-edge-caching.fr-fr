@@ -1,0 +1,48 @@
+---
+indexpage:
+  title: Documentation sur la mise en cache BlueXP Edge
+  summary: La mise en cache BlueXP Edge vous permet de créer un magasin de fichiers
+    centralisé pour les sites distants du monde entier. La mise en cache à la périphérie
+    permet de conserver les données fréquemment utilisées dans chacun des emplacements
+    distants associés et d'y accéder sans latence liée à l'accès aux données via WAN,
+    tout en restant sous contrôle centralisé.
+  keywords: bluexp, caching, edge, cloud volumes ontap, storage, deploy, cache, platform
+  lead: La mise en cache BlueXP Edge vous permet de créer un magasin de fichiers centralisé
+    pour les sites distants du monde entier. La mise en cache à la périphérie permet
+    de conserver les données fréquemment utilisées dans chacun des emplacements distants
+    associés et d'y accéder sans latence liée à l'accès aux données via WAN, tout
+    en restant sous contrôle centralisé.
+  tiles:
+  - title: Commencez
+    links:
+    - title: Découvrez la mise en cache BlueXP Edge
+      url: concept-gfc.html
+    - title: Nouveautés
+      url: whats-new.html
+    - title: Limites
+      url: concept-gfc.html#limitations
+  - title: Déployez les composants
+    links:
+    - title: Déployez Cloud Volumes ONTAP en tant que plateforme de stockage
+      url: task-gfc-getting-started.html#deploy-cloud-volumes-ontap-as-your-storage-platform
+    - title: Déployez le serveur et le cœur de gestion de la mise en cache BlueXP
+        Edge
+      url: task-gfc-getting-started.html#enable-bluexp-edge caching-in-your-working-environment
+    - title: Déployez les instances BlueXP Edge Caching
+      url: task-deploy-gfc-edge-instances.html
+  - title: Former les utilisateurs
+    links:
+    - title: Formation des utilisateurs finaux
+      url: concept-gfc-enduser-training.html
+  - title: Blogs et communauté
+    links:
+    - title: Communauté NetApp
+      url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
+    - title: Blog BlueXP
+      url: https://bluexp.netapp.com/blog
+    - title: Webinaires sur le cloud
+      url: https://bluexp.netapp.com/events
+  - title: Autres ressources
+    links:
+    - title: Utilisations de la mise en cache BlueXP Edge
+      url: https://bluexp.netapp.com/global-file-cache

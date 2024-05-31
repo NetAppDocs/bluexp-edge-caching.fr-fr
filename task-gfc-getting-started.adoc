@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-gfc-getting-started.html 
 keywords: global file cache, core, management server 
-summary: 'Vous utilisez BlueXP pour déployer le serveur de gestion de la mise en cache BlueXP Edge et le logiciel principal dans l"environnement de travail.' 
+summary: Vous déployez le serveur de gestion de la mise en cache en périphérie BlueXP et le logiciel Core sur un de vos systèmes de stockage. 
 ---
 = Pour commencer
 :hardbreaks:
@@ -14,33 +14,32 @@ summary: 'Vous utilisez BlueXP pour déployer le serveur de gestion de la mise e
 
 
 [role="lead"]
-Vous utilisez BlueXP pour déployer le serveur de gestion de la mise en cache BlueXP Edge et le logiciel principal dans l'environnement de travail.
+Vous déployez le serveur de gestion de la mise en cache en périphérie BlueXP et le logiciel Core sur un de vos systèmes de stockage.
+
+[]
+====
+IMPORTANT
+
+Depuis mai 2024, la possibilité d'activer, de déployer et de gérer les composants Global File cache à partir de l'interface utilisateur BlueXP a été supprimée. Vous devez effectuer ces étapes en accédant au système de stockage.
+
+====
 
 
-
-== Activez la mise en cache BlueXP Edge à l'aide de BlueXP
-
-Dans cette configuration, vous déployez le serveur de gestion de la mise en cache BlueXP Edge et le cœur de mise en cache BlueXP Edge dans le même environnement de travail que celui dans lequel vous avez créé votre système Cloud Volumes ONTAP à l'aide de BlueXP.
-
-Regarder link:https://www.youtube.com/watch?v=TGIQVssr43A["vidéo"^] pour voir les étapes du début à la fin.
-
-
-
-=== Démarrage rapide
+== Démarrage rapide
 
 Pour démarrer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir des informations détaillées :
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Déployez Cloud Volumes ONTAP
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Déployez votre plateforme de stockage
 [role="quick-margin-para"]
-Déployez Cloud Volumes ONTAP et configurez les partages de fichiers SMB. Pour plus d'informations, voir https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^].
+Les configurations cloud de mise en cache BlueXP Edge sont prises en charge avec les systèmes Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSX pour ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Après le déploiement du système de stockage, configurez les partages de fichiers SMB.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez le serveur de gestion de la mise en cache BlueXP Edge
 [role="quick-margin-para"]
-Déployez une instance du serveur de gestion de la mise en cache BlueXP Edge dans le même environnement de travail que l'instance de Cloud Volumes ONTAP.
+Déployez une instance du serveur de gestion de la mise en cache en périphérie BlueXP dans le même environnement.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Déployez le cœur de la mise en cache BlueXP Edge
 [role="quick-margin-para"]
-Déployez une ou plusieurs instances du noyau de mise en cache BlueXP Edge dans le même environnement de travail que l'instance de Cloud Volumes ONTAP et rejoignez-le dans votre domaine Active Directory.
+Déployez une ou plusieurs instances du noyau de mise en cache BlueXP Edge au même emplacement que votre système de stockage et rejoignez-le à votre domaine Active Directory.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Octroi de licences pour la mise en cache BlueXP Edge
 [role="quick-margin-para"]
@@ -48,17 +47,17 @@ Configurez le service BlueXP Edge Caching License Management Server (LMS) sur un
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"] Déployez les instances de mise en cache en périphérie BlueXP
 [role="quick-margin-para"]
-Voir link:task-deploy-gfc-edge-instances.html["Déploiement des instances BlueXP Edge Caching"^] Pour déployer les instances de mise en cache en périphérie BlueXP dans chaque emplacement distant. Cette étape n'est pas effectuée avec BlueXP.
+Voir link:task-deploy-gfc-edge-instances.html["Déploiement des instances BlueXP Edge Caching"^] Pour déployer les instances de mise en cache en périphérie BlueXP dans chaque emplacement distant.
 
 
 
-=== Déployez Cloud Volumes ONTAP comme plateforme de stockage
+=== Déployez votre plateforme de stockage
 
-La mise en cache BlueXP Edge prend en charge Cloud Volumes ONTAP déployé dans Azure, AWS et Google Cloud. Pour obtenir des informations détaillées sur les prérequis, les exigences et les instructions de déploiement, voir https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancement d'Cloud Volumes ONTAP dans Azure"^], https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-aws.html["Lancement d'Cloud Volumes ONTAP dans AWS"^], ou https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["Lancement d'Cloud Volumes ONTAP dans Google Cloud"^]
+Les configurations cloud de mise en cache BlueXP Edge sont prises en charge avec Cloud Volumes ONTAP (sur AWS, Azure et Google), Azure NetApp Files, Amazon FSX pour les systèmes ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS.
 
 Notez la condition supplémentaire de mise en cache BlueXP Edge suivante :
 
-* Vous devez configurer les partages de fichiers SMB sur l'instance de Cloud Volumes ONTAP.
+* Vous devez configurer les partages de fichiers SMB sur le système de stockage.
 +
 Si aucun partage de fichiers SMB n'est configuré sur l'instance, vous êtes invité à configurer les partages SMB lors de l'installation des composants de mise en cache BlueXP Edge.
 
@@ -66,56 +65,9 @@ Si aucun partage de fichiers SMB n'est configuré sur l'instance, vous êtes inv
 
 
 
-=== Activez la mise en cache BlueXP Edge dans votre environnement de travail
+=== Déployez Global File cache Core
 
-L'assistant d'installation vous guide tout au long des étapes de déploiement de l'instance du serveur de gestion de la mise en cache BlueXP Edge et de l'instance principale de mise en cache BlueXP Edge, comme souligné ci-dessous.
-
-image:screenshot_gfc_install1.png["Capture d'écran de la page d'installation initiale de la mise en cache BlueXP Edge."]
-
-.Étapes
-. Sélectionnez l'environnement de travail dans lequel vous avez déployé Cloud Volumes ONTAP.
-. Dans le panneau Services, cliquez sur *Activer* pour le service _Edge caching_.
-+
-image:screenshot_gfc_install2.png["Copie d'écran du bouton Activer initial dans l'environnement de travail pour activer la mise en cache BlueXP Edge."]
-
-. Lisez la page vue d'ensemble et cliquez sur *Continuer*.
-. Si aucun partage SMB n'est disponible sur l'instance Cloud Volumes ONTAP, vous êtes invité à entrer les informations du serveur SMB et du partage SMB afin de créer le partage maintenant. Pour plus de détails sur la configuration SMB, voir link:concept-before-you-begin-to-deploy-gfc.html#storage-platform-volumes["Plateforme de stockage"^].
-+
-Lorsque vous avez terminé, cliquez sur *Continuer* pour créer le partage SMB.
-
-+
-image:screenshot_gfc_install3.png["Capture d'écran affichant les informations requises pour créer un partage SMB si celui-ci n'est pas disponible."]
-
-. Sur la page Service de cache de fichiers global, entrez le nombre d'instances Global File cache Edge que vous prévoyez de déployer, puis assurez-vous que votre système répond aux exigences relatives aux règles de configuration réseau et de pare-feu, aux paramètres Active Directory et aux exclusions antivirus. Voir link:concept-before-you-begin-to-deploy-gfc.html#prerequisites["Prérequis"] pour en savoir plus.
-+
-image:screenshot_gfc_install4.png["Copie d'écran montrant les conditions préalables avant de déployer les instances du serveur de gestion de la mise en cache BlueXP Edge et les instances principales."]
-
-. Après avoir vérifié que les exigences ont été respectées ou que vous disposez des informations nécessaires pour répondre à ces exigences, cliquez sur *Continuer*.
-. Entrez les informations d'identification d'administration que vous utiliserez pour accéder à la machine virtuelle du serveur de gestion de la mise en cache BlueXP Edge, puis cliquez sur *Activer GFC Service*. Pour Azure et Google Cloud, vous entrez les identifiants en tant que nom d'utilisateur et mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle/de l'instance si vous le souhaitez.
-+
-image:screenshot_gfc_install5.png["Copie d'écran montrant les informations de configuration nécessaires à la configuration du serveur de gestion de la mise en cache BlueXP Edge."]
-
-. Une fois le déploiement du service de gestion de la mise en cache BlueXP Edge réussi, cliquez sur *Continuer*.
-. Pour le cœur de mise en cache de périphérie BlueXP, entrez les informations d'identification de l'utilisateur admin pour rejoindre le domaine Active Directory, ainsi que les informations d'identification de l'utilisateur du compte de service. Cliquez ensuite sur *Continuer*.
-+
-** L'instance centrale de mise en cache en périphérie BlueXP doit être déployée dans le même domaine Active Directory que l'instance Cloud Volumes ONTAP.
-** Le compte de service est un utilisateur de domaine et fait partie du groupe BULILTIN\opérateurs de sauvegarde sur l'instance Cloud Volumes ONTAP.
-+
-image:screenshot_gfc_install6.png["Copie d'écran montrant les informations de configuration nécessaires pour configurer le compte de service et l'annuaire actif de BlueXP Edge Caching Core."]
-
-
-
-. Entrez les informations d'identification d'administration que vous utiliserez pour accéder à la machine virtuelle principale de mise en cache de BlueXP Edge, puis cliquez sur *Deploy GFC Core*. Pour Azure et Google Cloud, vous entrez les identifiants en tant que nom d'utilisateur et mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle/de l'instance si vous le souhaitez.
-+
-image:screenshot_gfc_install7.png["Copie d'écran affichant les informations de configuration nécessaires pour configurer l'instance principale de la mise en cache de périphérie BlueXP."]
-
-. Une fois le noyau de mise en cache BlueXP Edge déployé, cliquez sur *aller au tableau de bord*.
-+
-image:screenshot_gfc_install8.png["Copie d'écran du tableau de bord de mise en cache BlueXP Edge une fois l'installation terminée."]
-
-
-
-Le tableau de bord indique que l'instance du serveur de gestion et l'instance Core sont à la fois * On* et fonctionnent.
+Reportez-vous au chapitre 7 de la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.3.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^].
 
 
 
@@ -160,36 +112,3 @@ Un message indiquant que votre abonnement à la licence réseau sans réseau a �
 Si vous avez déterminé que vous devez déployer plusieurs cœurs de mise en cache BlueXP Edge pour prendre en charge votre configuration, cliquez sur *Ajouter une instance Core* dans le tableau de bord et suivez les instructions de l'assistant de déploiement.
 
 Une fois votre déploiement Core terminé, vous devez link:download-gfc-resources.html["Déployez les instances de mise en cache en périphérie BlueXP"^] dans chacun de vos bureaux distants.
-
-
-
-== Déployer des instances Core supplémentaires
-
-Si votre configuration nécessite l'installation de plusieurs cœurs de mise en cache BlueXP Edge à cause d'un grand nombre d'instances Edge, vous pouvez ajouter un autre cœur à l'environnement de travail.
-
-Lors du déploiement d'instances Edge, vous configurez certains pour vous connecter au premier Core et d'autres au second Core. Les deux instances de base accèdent au même système de stockage back-end (votre instance Cloud Volumes ONTAP) dans l'environnement de travail.
-
-. Dans le tableau de bord Global File cache, cliquez sur *Add Core instance*.
-+
-image:screenshot_gfc_add_another_core.png["Capture d'écran du tableau de bord Fibre Channel et du bouton pour ajouter une instance Core supplémentaire."]
-
-. Entrez les informations d'identification de l'utilisateur admin pour rejoindre le domaine Active Directory et les informations d'identification de l'utilisateur du compte de service. Cliquez ensuite sur *Continuer*.
-+
-** L'instance principale de mise en cache en périphérie BlueXP doit se trouver dans le même domaine Active Directory que l'instance Cloud Volumes ONTAP.
-** Le compte de service est un utilisateur de domaine et fait partie du groupe BULILTIN\opérateurs de sauvegarde sur l'instance Cloud Volumes ONTAP.
-+
-image:screenshot_gfc_install6.png["Copie d'écran montrant les informations de configuration nécessaires pour configurer le compte de service et l'annuaire actif de BlueXP Edge Caching Core."]
-
-
-
-. Entrez les informations d'identification d'administration que vous utiliserez pour accéder à la machine virtuelle principale de mise en cache de BlueXP Edge, puis cliquez sur *Deploy GFC Core*. Pour Azure et Google Cloud, vous entrez les identifiants en tant que nom d'utilisateur et mot de passe. Pour AWS, vous sélectionnez la paire de clés appropriée. Vous pouvez modifier le nom de la machine virtuelle si vous le souhaitez.
-+
-image:screenshot_gfc_install7.png["Copie d'écran affichant les informations de configuration nécessaires pour configurer l'instance principale de la mise en cache de périphérie BlueXP."]
-
-. Une fois le noyau de mise en cache BlueXP Edge déployé, cliquez sur *aller au tableau de bord*.
-+
-image:screenshot_gfc_dashboard_2cores.png["Copie d'écran du tableau de bord de mise en cache BlueXP Edge une fois l'installation terminée."]
-
-
-
-Le Tableau de bord reflète la deuxième instance Core pour l'environnement de travail.

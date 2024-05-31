@@ -59,26 +59,7 @@ image:diagram_gfc_image2.png["Diagramme illustrant les détails du déploiement 
 
 == Plateformes de stockage prises en charge
 
-Les plateformes de stockage prises en charge pour la mise en cache BlueXP Edge diffèrent selon l'option de déploiement sélectionnée.
-
-
-
-=== Options de déploiement automatisé
-
-La mise en cache BlueXP Edge est prise en charge avec les types d'environnements de travail suivants lorsqu'elle est déployée à l'aide de BlueXP :
-
-* Cloud Volumes ONTAP dans Azure
-* Cloud Volumes ONTAP dans AWS
-* Cloud Volumes ONTAP dans Google Cloud
-
-
-Cette configuration vous permet de déployer et de gérer l'intégralité du déploiement côté serveur de mise en cache BlueXP Edge, y compris le serveur de gestion de la mise en cache BlueXP Edge et le cœur de mise en cache BlueXP Edge, à partir de BlueXP.
-
-
-
-=== Options de déploiement manuel
-
-Les configurations de mise en cache BlueXP Edge sont également prises en charge avec Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSX pour les systèmes ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Dans ces installations, les composants côté serveur de mise en cache BlueXP Edge doivent être configurés et déployés manuellement, pas à l'aide de BlueXP.
+Les configurations cloud de mise en cache BlueXP Edge sont prises en charge avec les systèmes Cloud Volumes ONTAP, Azure NetApp Files, Amazon FSX pour ONTAP et Cloud Volumes Service sur Google Cloud. Les solutions sur site sont également disponibles sur les plateformes NetApp AFF et FAS. Dans les deux types de configurations, les composants côté serveur de la mise en cache BlueXP Edge sont configurés et déployés manuellement, et non à l'aide de BlueXP.
 
 Voir la https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%202.3.0%20User%20Guide.pdf["Guide de l'utilisateur NetApp Global File cache"^] pour plus d'informations.
 
@@ -146,13 +127,13 @@ Dans Google Cloud, il s'exécute sur une instance n2-standard-8 ou équivalente 
 
 
 
-* Une fois installé avec Cloud Volumes ONTAP (les configurations prises en charge déployées entièrement via BlueXP), il existe deux options de tarification :
+* Une fois installé avec Cloud Volumes ONTAP, il existe deux options de tarification :
 +
 ** Pour les systèmes Cloud Volumes ONTAP, vous pouvez payer 3,000 $ par instance BlueXP Edge Caching Edge, par an.
 ** Pour les systèmes Cloud Volumes ONTAP dans Azure et GCP, vous pouvez également choisir le package Cloud Volumes ONTAP Edge cache. Cette licence basée sur la capacité vous permet de déployer une instance BlueXP Edge cache Edge unique pour chaque 3 To de capacité achetée. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["En savoir plus"^].
 
 
-* Lorsqu'ils sont installés à l'aide des options de déploiement manuel, le prix est différent. Pour obtenir une estimation de haut niveau des coûts, voir https://bluexp.netapp.com/global-file-cache/roi["Calcul de votre potentiel d'économies"^] Vous pouvez également consulter votre ingénieur solutions NetApp pour discuter des meilleures options de déploiement pour votre entreprise.
+* Lorsqu'il est installé sur d'autres plateformes (et non sur des systèmes Cloud Volumes ONTAP), le prix est différent. Pour obtenir une estimation de haut niveau des coûts, voir https://bluexp.netapp.com/global-file-cache/roi["Calcul de votre potentiel d'économies"^] Vous pouvez également consulter votre ingénieur solutions NetApp pour discuter des meilleures options de déploiement pour votre entreprise.
 
 
 
